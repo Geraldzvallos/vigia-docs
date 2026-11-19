@@ -1,0 +1,1980 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plataforma de gestión de pruebas de software — SI-784 Calidad y Pruebas de Software (UPT/EPIS)">
+      
+      
+      
+      
+        <link rel="prev" href="../security/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Referencia: app.services - Vigía · Documentación técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#referencia-appservices" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-header__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vigía · Documentación técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Referencia: app.services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-nav__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vigía · Documentación técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-estado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estado del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20-diccionario-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../30-diagrama-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrama entidad-relación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40-diagramas-clases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../45-componentes-despliegue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de componentes y de despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de endpoints de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/01-titulo-problema-objetivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía — Título, problema y objetivos (Unidad II · Semana 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/02-backlog-historias-invest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/03-plan-de-pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan de pruebas de Vigía (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/04-modelo-de-datos-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de datos v2 (propuesta para revisar)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/05-reporte-cobertura-mutacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte de Cobertura de Código y Pruebas de Mutación (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/06-bdd-gherkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificación y Pruebas BDD con Gherkin en Español (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/07-uat-sus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/08-documentacion-automatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación automática: README y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesaudit_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.audit_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesci_token_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.ci_token_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesemail_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.email_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesexecution_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.execution_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appserviceshttp_runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.http_runner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.http_runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httprunnererror-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HttpRunnerError (Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultadoasercion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResultadoAsercion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultadohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResultadoHttp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_conexionhttpfijada-httpclienthttpconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ConexionHttpFijada (http.client.HTTPConnection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_conexionhttpsfijada-httpclienthttpsconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ConexionHttpsFijada (http.client.HTTPSConnection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesintegration_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.integration_service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.integration_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracionerror-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntegracionError (Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracionesdeshabilitadas-integracionerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntegracionesDeshabilitadas (IntegracionError)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesinvitation_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.invitation_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesjunit_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.junit_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesmetrics_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.metrics_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesnotification_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.notification_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesproject_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.project_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesrepository_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.repository_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesrun_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.run_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicessession_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.session_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicestelemetry_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.telemetry_service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.telemetry_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vigiabusinesscollector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VigiaBusinessCollector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesticket_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.ticket_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesuser_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.user_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesaudit_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.audit_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesci_token_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.ci_token_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesemail_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.email_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesexecution_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.execution_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appserviceshttp_runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.http_runner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.http_runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httprunnererror-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HttpRunnerError (Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultadoasercion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResultadoAsercion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultadohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResultadoHttp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_conexionhttpfijada-httpclienthttpconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ConexionHttpFijada (http.client.HTTPConnection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_conexionhttpsfijada-httpclienthttpsconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ConexionHttpsFijada (http.client.HTTPSConnection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesintegration_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.integration_service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.integration_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracionerror-exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntegracionError (Exception)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracionesdeshabilitadas-integracionerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IntegracionesDeshabilitadas (IntegracionError)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesinvitation_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.invitation_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesjunit_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.junit_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesmetrics_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.metrics_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesnotification_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.notification_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesproject_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.project_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesrepository_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.repository_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesrun_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.run_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicessession_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.session_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicestelemetry_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.telemetry_service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="app.services.telemetry_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vigiabusinesscollector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VigiaBusinessCollector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesticket_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.ticket_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appservicesuser_service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.services.user_service
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="referencia-appservices">Referencia: <code>app.services</code><a class="headerlink" href="#referencia-appservices" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Detalle de cada clase con sus atributos, propiedades y métodos, generado desde el código y sus docstrings.</p>
+</blockquote>
+<h2 id="appservicesaudit_service"><code>app.services.audit_service</code><a class="headerlink" href="#appservicesaudit_service" title="Permanent link">&para;</a></h2>
+<p>Servicio de auditoría inmutable de Vigía. Registra eventos críticos del sistema en audit_log garantizando: 1. Ningún secreto ni credencial en details_json. 2. En logins fallidos jamás se guarda la contraseña o texto ingresado como tal. 3. Fallo silencioso con advertencia en log: un error al auditar jamás rompe la operación de negocio.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>sanitize_audit_details(details: Optional[Dict[str, Any]]) -&gt; Optional[str]</code>: Sanitiza y serializa el diccionario de detalles a JSON. Elimina claves sensibles y enmascara texto.</li>
+<li><code>record_audit_event(db: Session, action: str, entity: str, entity_id: Optional[Union[str, int]]=None, actor_user_id: Optional[int]=None, project_id: Optional[int]=None, details: Optional[Dict[str, Any]]=None) -&gt; Optional[AuditLog]</code>: Registra un evento en la tabla audit_log. Un fallo al auditar NO rompe la operación (emite advertencia en logs).</li>
+</ul>
+<h2 id="appservicesci_token_service"><code>app.services.ci_token_service</code><a class="headerlink" href="#appservicesci_token_service" title="Permanent link">&para;</a></h2>
+<p>Servicio de gestión de Tokens de CI por proyecto (Fase 4: CI/CD Tokens). Genera tokens criptográficos con prefijo 'vgi_', calcula hash SHA-256 para almacenamiento seguro y valida tokens en tiempo constante.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>generate_project_ci_token(db: Session, project_id: int, name: str, user_id: Optional[int]=None) -&gt; Tuple[ProjectApiToken, str]</code>: Genera un token seguro formato 'vgi_' + 40 chars urlsafe. Guarda token_hash (SHA-256) y token_prefix (primeros 8 caracteres). Devuelve la entidad y el token en claro (solo visible en creación).</li>
+<li><code>list_project_ci_tokens(db: Session, project_id: int) -&gt; List[ProjectApiToken]</code>: Lista todos los tokens creados para el proyecto ordenados por fecha descendente.</li>
+<li><code>revoke_project_ci_token(db: Session, project_id: int, token_id: int) -&gt; ProjectApiToken</code>: Revoca un token del proyecto estableciendo revoked_at.</li>
+<li><code>authenticate_ci_token(db: Session, raw_token: str) -&gt; Optional[ProjectApiToken]</code>: Valida un token con prefijo 'vgi_' mediante SHA-256 y comparación en tiempo constante. Si es válido y no está revocado, actualiza last_used_at y devuelve el objeto.</li>
+</ul>
+<h2 id="appservicesemail_service"><code>app.services.email_service</code><a class="headerlink" href="#appservicesemail_service" title="Permanent link">&para;</a></h2>
+<p>Servicio centralizado de envío de correos electrónicos y gestión de códigos de autenticación. Fase D - Verificación de correo, recuperación de contraseña y avisos transaccionales.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_utc_now() -&gt; datetime</code></li>
+<li><code>hash_code(code: str) -&gt; str</code>: Calcula el hash SHA-256 en hexadecimal del código de 6 dígitos.</li>
+<li><code>send_email(to: str, subject: str, text: str, html: str) -&gt; bool</code>: Envía un correo electrónico transaccional con versión HTML y texto plano mediante SMTP (STARTTLS). Timeout de 10 segundos. Nunca propaga excepciones al llamador: ante cualquier error registra en logs y devuelve False.</li>
+<li><code>build_email_template(title: str, intro: str, code: Optional[str]=None, action_url: Optional[str]=None, action_text: Optional[str]=None, footer_note: Optional[str]=None) -&gt; Tuple[str, str]</code>: Construye la plantilla sobria HTML (sin dependencias ni imágenes externas) y la versión en texto plano correspondiente.</li>
+<li><code>issue_email_code(db: Session, user: User, purpose: str) -&gt; str</code>: Genera un código numérico seguro de 6 dígitos con secrets, invalida cualquier código anterior del mismo propósito para este usuario, guarda su hash SHA-256 en la base de datos y retorna el código en claro para su despacho.</li>
+<li><code>verify_email_code(db: Session, user: User, purpose: str, raw_code: str) -&gt; Tuple[bool, str]</code>: Valida el código de verificación o recuperación contra la base de datos. - Rechaza códigos expirados, ya utilizados o inexistentes. - 5 intentos fallidos invalidan definitivamente el código. - Si es válido, lo marca como utilizado y retorna (True, 'ok').</li>
+<li><code>send_verification_email(user: User, code: str) -&gt; bool</code>: Envía el correo con el código de 6 dígitos para la verificación de cuenta.</li>
+<li><code>send_password_reset_email(user: User, code: str) -&gt; bool</code>: Envía el correo con el código de 6 dígitos para recuperación de contraseña.</li>
+<li><code>send_invitation_email(to_email: str, invited_by_name: str, project_name: str, role: str) -&gt; bool</code>: Envía el aviso por correo de una nueva invitación a un proyecto en Vigía.</li>
+</ul>
+<h2 id="appservicesexecution_service"><code>app.services.execution_service</code><a class="headerlink" href="#appservicesexecution_service" title="Permanent link">&para;</a></h2>
+<p>Servicio centralizado de ejecución y validación de pruebas SQL y API. Garantiza que la ejecución individual y la de suites compartan la misma lógica de orquestación y trazabilidad.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>json_serial_helper(obj: Any) -&gt; Any</code>: Helper para convertir objetos no JSON nativos habituales en Oracle.</li>
+<li><code>format_actual_result(rows: Any, max_chars: int=2000) -&gt; str</code>: Serializa y limita el tamaño del resultado real devuelto como evidencia.</li>
+<li><code>resolve_connection_credentials(db: Session, connection_profile_id: Optional[int]=None, dsn: Optional[str]=None, user: Optional[str]=None, password: Optional[str]=None, auth_type: Optional[str]=None) -&gt; Tuple[str, str, str, Optional[models_conn.ConnectionProfile]]</code>: Resuelve el DSN, usuario y objeto profile a partir de connection_profile_id o de credenciales directas. Aplica fallback de contraseña desde entorno (ORACLE_CI_PASSWORD o FRAMEWORK_TEST_PASSWORD) ÚNICAMENTE cuando la petición se autenticó con API Key de CI (auth_type == 'api_key') y el ambiente NO es PRODUCTION. Para sesiones humanas o ambientes PRODUCTION, se exige contraseña (400). Para perfiles demo (is_demo=True), inyecta DEMO_ORACLE_PASSWORD y fuerza ambiente TEST.</li>
+<li><code>run_single_test_case_execution(db: Session, tc: models_tc.TestCase, executor: TargetDatabaseExecutor, suite_id: Optional[int]=None, connection_profile_id: Optional[int]=None, confirm_staging_dml: bool=False, executed_by: Optional[int]=None, trigger_source: str='MANUAL', ci_run_id: Optional[int]=None) -&gt; models_history.ExecutionHistory</code>: Servicio central que ejecuta un caso de prueba contra la BD objetivo, evalúa el resultado según la estrategia elegida y persiste la evidencia.</li>
+<li><code>cargar_especificacion_api(spec) -&gt; Dict[str, Any]</code>: Convierte la fila api_case_specs en los parámetros del HttpRunner.</li>
+<li><code>run_api_test_case_execution(db: Session, tc: models_tc.TestCase, suite_id: Optional[int]=None, executed_by: Optional[int]=None, trigger_source: str='MANUAL', ci_run_id: Optional[int]=None) -&gt; models_history.ExecutionHistory</code>: Ejecuta un caso API con el HttpRunner, guarda la evidencia en ExecutionHistory y crea o reabre el ticket de defecto si falla (mismo flujo que los casos SQL).</li>
+</ul>
+<h2 id="appserviceshttp_runner"><code>app.services.http_runner</code><a class="headerlink" href="#appserviceshttp_runner" title="Permanent link">&para;</a></h2>
+<p>HttpRunner: ejecuta los casos de prueba API (petición HTTP + aserciones).</p>
+<h3 id="httprunnererror-exception"><code>HttpRunnerError</code> (Exception)<a class="headerlink" href="#httprunnererror-exception" title="Permanent link">&para;</a></h3>
+<p>Error de política o de red: el caso termina en ERROR (no en FAIL).</p>
+<h3 id="resultadoasercion"><code>ResultadoAsercion</code><a class="headerlink" href="#resultadoasercion" title="Permanent link">&para;</a></h3>
+<p><strong>Atributos</strong></p>
+<ul>
+<li><code>path: str</code></li>
+<li><code>op: str</code></li>
+<li><code>esperado: Any</code></li>
+<li><code>obtenido: Any</code></li>
+<li><code>ok: bool</code></li>
+</ul>
+<h3 id="resultadohttp"><code>ResultadoHttp</code><a class="headerlink" href="#resultadohttp" title="Permanent link">&para;</a></h3>
+<p><strong>Atributos</strong></p>
+<ul>
+<li><code>status: str</code></li>
+<li><code>duration_ms: float</code></li>
+<li><code>http_status: Optional[int]</code></li>
+<li><code>extracto: str</code></li>
+<li><code>mensaje: Optional[str]</code></li>
+<li><code>aserciones: List[ResultadoAsercion]</code></li>
+</ul>
+<h3 id="_conexionhttpfijada-httpclienthttpconnection"><code>_ConexionHttpFijada</code> (http.client.HTTPConnection)<a class="headerlink" href="#_conexionhttpfijada-httpclienthttpconnection" title="Permanent link">&para;</a></h3>
+<p><strong>Métodos</strong></p>
+<ul>
+<li><code>__init__(self, host: str, ip: str, port: int, timeout: float)</code></li>
+<li><code>connect(self)</code></li>
+</ul>
+<h3 id="_conexionhttpsfijada-httpclienthttpsconnection"><code>_ConexionHttpsFijada</code> (http.client.HTTPSConnection)<a class="headerlink" href="#_conexionhttpsfijada-httpclienthttpsconnection" title="Permanent link">&para;</a></h3>
+<p><strong>Métodos</strong></p>
+<ul>
+<li><code>__init__(self, host: str, ip: str, port: int, timeout: float)</code></li>
+<li><code>connect(self)</code></li>
+</ul>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>normalizar_host(host: str) -&gt; str</code>: Valida y normaliza un dominio para allowed_hosts (<code>api.ejemplo.com</code> o <code>*.ejemplo.com</code>).</li>
+<li><code>host_permitido(host: str, permitidos: List[str]) -&gt; bool</code></li>
+<li><code>validar_url(url: str) -&gt; Tuple[str, str, int, str]</code>: Devuelve (esquema, host, puerto, ruta+query). Lanza ValueError si la URL no es válida.</li>
+<li><code>validar_aserciones(aserciones: Optional[List[Dict[str, Any]]]) -&gt; List[Dict[str, Any]]</code></li>
+<li><code>enmascarar_cabeceras(cabeceras: Optional[Dict[str, str]]) -&gt; Dict[str, str]</code></li>
+<li><code>resolver_ip_segura(host: str, puerto: int) -&gt; str</code></li>
+<li><code>obtener_ruta(datos: Any, path: str) -&gt; Any</code>: Navega un JSON con notación de puntos: <code>data.items.0.id</code> (acepta prefijo <code>$.</code>).</li>
+<li><code>evaluar_asercion(datos: Any, a: Dict[str, Any]) -&gt; ResultadoAsercion</code></li>
+<li><code>ejecutar(metodo: str, url: str, cabeceras: Optional[Dict[str, str]], cuerpo: Optional[str], expected_status: int, max_response_ms: Optional[int], aserciones: Optional[List[Dict[str, Any]]], dominios_permitidos: List[str]) -&gt; ResultadoHttp</code></li>
+</ul>
+<h2 id="appservicesintegration_service"><code>app.services.integration_service</code><a class="headerlink" href="#appservicesintegration_service" title="Permanent link">&para;</a></h2>
+<p>Integraciones externas por proyecto.</p>
+<h3 id="integracionerror-exception"><code>IntegracionError</code> (Exception)<a class="headerlink" href="#integracionerror-exception" title="Permanent link">&para;</a></h3>
+<p>Error mostrable al usuario. status_code sugiere la respuesta HTTP de la API.</p>
+<p><strong>Métodos</strong></p>
+<ul>
+<li><code>__init__(self, mensaje: str, status_code: int=400)</code></li>
+</ul>
+<h3 id="integracionesdeshabilitadas-integracionerror"><code>IntegracionesDeshabilitadas</code> (IntegracionError)<a class="headerlink" href="#integracionesdeshabilitadas-integracionerror" title="Permanent link">&para;</a></h3>
+<p><strong>Métodos</strong></p>
+<ul>
+<li><code>__init__(self, mensaje: str='Las integraciones están deshabilitadas: falta configurar INTEGRATIONS_ENCRYPTION_KEY en el servidor.')</code></li>
+</ul>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>clave_configurada() -&gt; bool</code></li>
+<li><code>cifrar(datos: Dict) -&gt; str</code></li>
+<li><code>descifrar(texto: str) -&gt; Dict</code></li>
+<li><code>validar_webhook(kind: str, url: str) -&gt; Tuple[str, str]</code>: Devuelve (url_normalizada, texto_visible). Solo HTTPS hacia el host oficial del servicio.</li>
+<li><code>validar_config(kind: str, datos: Dict, anterior: Optional[Dict]=None) -&gt; Tuple[Dict, str]</code>: Valida lo que envía el usuario. Un secreto vacío conserva el guardado antes.</li>
+<li><code>obtener(db: Session, project_id: int, kind: str) -&gt; Optional[ProjectIntegration]</code></li>
+<li><code>serializar(integ: ProjectIntegration) -&gt; Dict</code></li>
+<li><code>guardar(db: Session, project_id: int, kind: str, datos: Dict, enabled: bool, user_id: Optional[int]) -&gt; ProjectIntegration</code></li>
+<li><code>cuerpo_issue(ticket: DefectTicket) -&gt; str</code></li>
+<li><code>crear_issue_github(db: Session, ticket: DefectTicket, user_id: Optional[int]) -&gt; Tuple[str, bool]</code>: Crea el issue y guarda su URL en el ticket. Devuelve (url, creado_ahora).</li>
+<li><code>notificar(db: Session, project_id: int, titulo: str, lineas: List[str], exito: bool) -&gt; Dict[str, bool]</code>: Envía a cada webhook activo del proyecto. Nunca lanza excepciones.</li>
+<li><code>notificar_corrida(db: Session, run) -&gt; Dict[str, bool]</code></li>
+<li><code>probar(db: Session, integ: ProjectIntegration) -&gt; Tuple[bool, str]</code>: Prueba la integración sin crear nada: GitHub consulta el repo; los webhooks envían un mensaje.</li>
+</ul>
+<h2 id="appservicesinvitation_service"><code>app.services.invitation_service</code><a class="headerlink" href="#appservicesinvitation_service" title="Permanent link">&para;</a></h2>
+<p>Servicio para la gestión de invitaciones a proyectos. Fase C - Flujo de invitación con consentimiento y aceptación.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>format_invitation(inv: ProjectInvitation) -&gt; Dict[str, Any]</code></li>
+<li><code>create_invitation(db: Session, project_id: int, role: str, username: Optional[str]=None, email: Optional[str]=None, username_or_email: Optional[str]=None, invited_by: Optional[int]=None) -&gt; Dict[str, Any]</code>: Crea una invitación pendiente para unirse a un proyecto. Validaciones: - Usuario debe existir y estar activo (404 si no existe). - Usuario no debe ser ya miembro del proyecto (400 si ya es miembro). - Rol debe ser válido. - No debe existir ya una invitación PENDIENTE para ese (proyecto, usuario) (409 si duplicada).</li>
+<li><code>list_user_pending_invitations(db: Session, user_id: int) -&gt; List[Dict[str, Any]]</code>: Lista las invitaciones pendientes del usuario actual.</li>
+<li><code>list_project_pending_invitations(db: Session, project_id: int) -&gt; List[Dict[str, Any]]</code>: Lista las invitaciones pendientes asociadas a un proyecto.</li>
+<li><code>accept_invitation(db: Session, invitation_id: int, current_user_id: int) -&gt; Dict[str, Any]</code>: Acepta una invitación pendiente y crea la membresía correspondiente. Solo el usuario invitado puede aceptar; terceros reciben 404. Si ya no está pendiente -&gt; 409.</li>
+<li><code>decline_invitation(db: Session, invitation_id: int, current_user_id: int) -&gt; Dict[str, Any]</code>: Rechaza una invitación pendiente. Solo el usuario invitado puede rechazar; terceros reciben 404. Si ya no está pendiente -&gt; 409.</li>
+<li><code>cancel_project_invitation(db: Session, project_id: int, invitation_id: int) -&gt; Dict[str, Any]</code>: Cancela una invitación pendiente de un proyecto. Si ya no está pendiente -&gt; 409.</li>
+</ul>
+<h2 id="appservicesjunit_service"><code>app.services.junit_service</code><a class="headerlink" href="#appservicesjunit_service" title="Permanent link">&para;</a></h2>
+<p>Importación de reportes JUnit XML (pytest --junitxml, Maven Surefire, Gradle, Jest-junit, Playwright…).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>parsear(xml: str) -&gt; List[Dict]</code>: Devuelve [{nombre, clase, estado, duracion_ms, mensaje}] o lanza HTTPException 422.</li>
+<li><code>importar(db: Session, project_id: int, xml: str, nombre: Optional[str], user_id: Optional[int], ci_run_id: Optional[int]=None) -&gt; TestRun</code></li>
+</ul>
+<h2 id="appservicesmetrics_service"><code>app.services.metrics_service</code><a class="headerlink" href="#appservicesmetrics_service" title="Permanent link">&para;</a></h2>
+<p>Métricas de calidad de un proyecto (para el panel de Métricas y la exposición).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>tasa_aprobacion(run: TestRun) -&gt; Optional[float]</code></li>
+<li><code>metricas_proyecto(db: Session, project_id: int, ultimas: int=10) -&gt; Dict</code></li>
+</ul>
+<h2 id="appservicesnotification_service"><code>app.services.notification_service</code><a class="headerlink" href="#appservicesnotification_service" title="Permanent link">&para;</a></h2>
+<p>Servicio para la gestión y emisión de Notificaciones en el portal. Fase C - Centro de notificaciones.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>send_email_notification(user_id: int, subject: str, message: str) -&gt; bool</code>: Punto de extensión para el envío de notificaciones vía correo electrónico. Trabajo futuro documentado en docs/arquitectura.md. No realiza ninguna acción si no existen variables de entorno SMTP (fail-safe).</li>
+<li><code>notify(db: Session, user_id: int, type: str, title: str, message: str, link: Optional[str]=None, related_id: Optional[int]=None) -&gt; Optional[Notification]</code>: Crea una notificación interna dentro de la transacción actual de la base de datos.</li>
+<li><code>get_user_notifications(db: Session, user_id: int, unread_only: bool=False, limit: int=50, offset: int=0) -&gt; Dict[str, Any]</code>: Retorna las notificaciones del usuario con paginación y conteo de no leídas.</li>
+<li><code>get_user_unread_count(db: Session, user_id: int) -&gt; int</code>: Retorna únicamente el conteo de notificaciones no leídas.</li>
+<li><code>mark_notification_as_read(db: Session, notification_id: int, user_id: int) -&gt; Notification</code>: Marca una notificación específica como leída. Aislamiento: Si la notificación no pertenece al usuario o no existe -&gt; 404.</li>
+<li><code>mark_all_notifications_as_read(db: Session, user_id: int) -&gt; int</code>: Marca todas las notificaciones pendientes del usuario como leídas.</li>
+</ul>
+<h2 id="appservicesproject_service"><code>app.services.project_service</code><a class="headerlink" href="#appservicesproject_service" title="Permanent link">&para;</a></h2>
+<p>Servicio para inicializar y gestionar proyectos y miembros en la base de datos interna. Fase A - Plataforma multiusuario con membresía y roles por proyecto.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>ensure_default_project(db: Session) -&gt; Project</code>: Garantiza la existencia del 'Proyecto general' inicial.</li>
+<li><code>get_max_projects_limit() -&gt; int</code>: Obtiene el límite máximo configurable de proyectos por usuario.</li>
+<li><code>create_user_project(db: Session, project_data: ProjectCreate, creator: User) -&gt; Project</code>: Crea un nuevo proyecto y asigna al creador como OWNER en project_members. Verifica el límite MAX_PROJECTS_PER_USER para usuarios normales (ADMIN sin límite).</li>
+<li><code>list_project_members(db: Session, project_id: int, include_email: bool=True) -&gt; List[dict]</code>: Lista todos los miembros registrados en un proyecto.</li>
+<li><code>add_project_member(db: Session, project_id: int, role: str, username: Optional[str]=None, email: Optional[str]=None, added_by: Optional[int]=None) -&gt; dict</code>: Agrega un nuevo miembro a un proyecto por username o email.</li>
+<li><code>update_project_member_role(db: Session, project_id: int, user_or_member_id: int, new_role: str) -&gt; dict</code>: Modifica el rol de un miembro en un proyecto. Protección crítica: No se puede degradar al último OWNER del proyecto.</li>
+<li><code>remove_project_member(db: Session, project_id: int, user_or_member_id: int, current_user: User) -&gt; None</code>: Elimina un miembro de un proyecto. Permitido si current_user es OWNER, ADMIN global, o si el propio usuario está saliendo del proyecto. Protección crítica: No se puede quitar ni abandonar el proyecto siendo el último OWNER.</li>
+</ul>
+<h2 id="appservicesrepository_service"><code>app.services.repository_service</code><a class="headerlink" href="#appservicesrepository_service" title="Permanent link">&para;</a></h2>
+<p>Servicio para la lógica de negocio y operaciones de persistencia de Repositorios Git. Desacopla la lógica de base de datos de los controladores API.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_repositories(db: Session, skip: int=0, limit: int=100, project_id: Optional[int]=None) -&gt; List[Repository]</code>: Obtiene la lista de repositorios con paginación y filtro opcional por proyecto.</li>
+<li><code>get_repository_by_id(db: Session, repository_id: int) -&gt; Repository</code>: Obtiene un repositorio por su ID. Lanza HTTP 404 si no existe.</li>
+<li><code>create_repository(db: Session, repository_in: RepositoryCreate) -&gt; Repository</code>: Registra un nuevo repositorio Git asegurando la integridad referencial y unicidad.</li>
+<li><code>update_repository(db: Session, repository_id: int, repository_in: RepositoryUpdate) -&gt; Repository</code>: Actualiza parcialmente un repositorio Git existente validando colisiones de URL o nombre.</li>
+<li><code>delete_repository(db: Session, repository_id: int) -&gt; None</code>: Elimina un repositorio por su ID. Lanza HTTP 404 si no existe.</li>
+</ul>
+<h2 id="appservicesrun_service"><code>app.services.run_service</code><a class="headerlink" href="#appservicesrun_service" title="Permanent link">&para;</a></h2>
+<p>Servicio de corridas de prueba (test runs) y de trazabilidad historia → casos → resultado → defectos.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>recalcular_totales(run: TestRun) -&gt; None</code></li>
+<li><code>crear_corrida(db: Session, suite, nombre: Optional[str], user_id: Optional[int], origin: str=RunOrigin.MANUAL.value) -&gt; TestRun</code></li>
+<li><code>necesita_conexion(run: TestRun) -&gt; bool</code></li>
+<li><code>ejecutar_automaticos(db: Session, run: TestRun, executor=None, connection_profile_id: Optional[int]=None, confirm_staging_dml: bool=False, executed_by: Optional[int]=None, trigger_source: str='MANUAL') -&gt; TestRun</code>: Ejecuta los resultados POR_EJECUTAR de casos API (siempre) y SQL (si hay executor).</li>
+<li><code>registrar_resultado_manual(db: Session, run: TestRun, res: TestRunResult, status: str, comment: Optional[str], user_id: Optional[int]) -&gt; TestRunResult</code></li>
+<li><code>finalizar_corrida(db: Session, run: TestRun) -&gt; TestRun</code></li>
+<li><code>ticket_de_resultado(db: Session, res: TestRunResult) -&gt; Optional[int]</code></li>
+<li><code>serializar_resultado(db: Session, res: TestRunResult) -&gt; Dict</code></li>
+<li><code>serializar_corrida(db: Session, run: TestRun, con_resultados: bool=True) -&gt; Dict</code></li>
+<li><code>matriz_trazabilidad(db: Session, project_id: int) -&gt; Dict</code></li>
+</ul>
+<h2 id="appservicessession_service"><code>app.services.session_service</code><a class="headerlink" href="#appservicessession_service" title="Permanent link">&para;</a></h2>
+<p>Servicio de gestión de sesiones de usuario (RNF04). Controla: - Inactividad deslizante (SESSION_IDLE_MINUTES, default 30 min). - Tope absoluto de sesión de 24 horas. - Límite máximo de sesiones simultáneas por usuario (SESSION_MAX_PER_USER, default 5). - Hash SHA-256 de identificador de token (jti). - Resumen sanitizado de User-Agent (sin IP).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_utc_now() -&gt; datetime</code></li>
+<li><code>get_session_idle_minutes() -&gt; int</code>: Retorna el tiempo de inactividad máximo permitido en minutos (default 30 min).</li>
+<li><code>get_session_max_per_user() -&gt; int</code>: Retorna el número máximo de sesiones activas simultáneas por usuario (default 5).</li>
+<li><code>hash_jti(jti: str) -&gt; str</code>: Genera el hash SHA-256 del jti para almacenamiento seguro.</li>
+<li><code>summarize_user_agent(ua_raw: Optional[str]) -&gt; str</code>: Extrae un resumen estructurado y seguro del User-Agent: Navegador y Sistema Operativo. NUNCA incluye la cadena cruda completa ni direcciones IP.</li>
+<li><code>create_user_session(db: Session, user_id: int, user_agent_raw: Optional[str]=None, jti: Optional[str]=None) -&gt; Tuple[str, UserSession]</code>: Crea una nueva sesión en user_sessions: 1. Genera un jti criptográfico único (o usa el provisto). 2. Aplica la política de máximo de sesiones (SESSION_MAX_PER_USER): si se supera, revoca la más antigua. 3. Fija expires_at con la inactividad inicial (tope absoluto 24 h). Retorna la tupla (jti_plano, objeto_UserSession).</li>
+<li><code>validate_and_renew_session(db: Session, jti: str, user_id: int) -&gt; Optional[UserSession]</code>: Valida que la sesión exista, corresponda al usuario, no esté revocada y no haya expirado. Aplica renovación deslizante: actualiza last_seen_at como máximo una vez por minuto para no escribir en base de datos en cada petición, extendiendo expires_at respetando el máximo absoluto de 24 horas desde created_at. Retorna UserSession si es válida; None si es inválida/expirada/revocada.</li>
+<li><code>is_session_valid(session: UserSession, now: Optional[datetime]=None) -&gt; bool</code>: Verifica si una sesión de usuario es válida (no revocada y no expirada).</li>
+<li><code>revoke_session(db: Session, session_id: int, user_id: int) -&gt; bool</code>: Revoca una sesión específica perteneciente al usuario.</li>
+<li><code>revoke_all_user_sessions(db: Session, user_id: int) -&gt; int</code>: Revoca todas las sesiones activas de un usuario (e.g. al cambiar la contraseña).</li>
+<li><code>revoke_other_sessions(db: Session, user_id: int, current_jti: str) -&gt; int</code>: Revoca todas las sesiones activas del usuario EXCEPTO la actual.</li>
+<li><code>get_user_sessions(db: Session, user_id: int, current_jti: Optional[str]=None) -&gt; List[Dict[str, Any]]</code>: Retorna la lista de sesiones activas del usuario, indicando cuál es la actual.</li>
+</ul>
+<h2 id="appservicestelemetry_service"><code>app.services.telemetry_service</code><a class="headerlink" href="#appservicestelemetry_service" title="Permanent link">&para;</a></h2>
+<p>Servicio centralizado de telemetría y análisis de uso del producto Vigía. Maneja el registro asíncrono y en segundo plano de eventos técnicos y de negocio, la limpieza periódica por política de retención (90 días por defecto) y el cálculo de indicadores analíticos para el dashboard de uso (DAU/WAU/MAU, latencias p50/p95, distribuciones y rankings).</p>
+<h3 id="vigiabusinesscollector"><code>VigiaBusinessCollector</code><a class="headerlink" href="#vigiabusinesscollector" title="Permanent link">&para;</a></h3>
+<p>Colector en tiempo de consulta que obtiene métricas de negocio directamente desde la base de datos al momento de pedir /metrics. Evita contadores en memoria desincronizados entre workers.</p>
+<p><strong>Métodos</strong></p>
+<ul>
+<li><code>__init__(self, session_factory)</code></li>
+<li><code>collect(self)</code></li>
+</ul>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>compile_routes_cache(app) -&gt; List[Tuple[re.Pattern, Set[str], str]]</code>: Compila una lista en memoria de rutas para búsqueda rápida de plantillas.</li>
+<li><code>extract_route_template(app, path: str, method: str) -&gt; Optional[str]</code>: Obtiene la ruta plantilla correspondiente (por ejemplo '/api/projects/{project_id}') para garantizar que nunca se registren IDs reales ni query params.</li>
+<li><code>extract_module(route_template: Optional[str], path: str) -&gt; str</code>: Extrae el nombre del módulo lógico a partir de la ruta.</li>
+<li><code>save_usage_event_background(data: Dict[str, Any]) -&gt; None</code>: Tarea de segundo plano para persistir eventos de uso con su propia sesión corta de BD. Garantiza fallo silencioso: si falla, solo emite advertencia.</li>
+<li><code>record_business_event(event_type: str, user_id: Optional[int]=None, project_id: Optional[int]=None, source: str='WEB', module: Optional[str]=None, status_code: Optional[int]=200, duration_ms: Optional[float]=None, route_template: Optional[str]=None, db: Optional[Session]=None) -&gt; None</code>: Registra un evento de negocio explícito (login_ok, login_fallido, logout, caso_creado, ejecucion, corrida_iniciada, corrida_finalizada, ticket_movido, junit_importado). Utiliza su propia sesión independiente para no interferir con transacciones activas. Falla de manera silenciosa si la base de datos no está disponible.</li>
+<li><code>cleanup_usage_events(db: Session, retention_days: Optional[int]=None) -&gt; int</code>: Borra eventos de más de 90 días (o el valor de USAGE_RETENTION_DAYS). Retorna la cantidad de filas eliminadas.</li>
+<li><code>parse_date_range(desde_str: Optional[str], hasta_str: Optional[str]) -&gt; Tuple[datetime, datetime]</code>: Valida y convierte el rango de fechas 'desde' y 'hasta'. - Formato requerido: YYYY-MM-DD - Regla 1: desde &lt;= hasta - Regla 2: rango maximo 180 dias</li>
+<li><code>calculate_usage_dashboard(db: Session, desde_dt: datetime, hasta_dt: datetime) -&gt; Dict[str, Any]</code>: Calcula los indicadores analíticos de uso del producto: - Usuarios registrados acumulados - Usuarios activos DAU, WAU, MAU - Logins diarios (ok y fallidos) - Proyectos creados - Ejecuciones por día y origen (WEB vs CI) - Corridas de pruebas - Tickets creados y cerrados - Top 10 módulos más usados - Errores 4xx y 5xx por día - Latencia p50 y p95 por ruta plantilla (top 10 más lentas)</li>
+<li><code>setup_prometheus_collectors(session_factory) -&gt; None</code>: Registra el colector de negocio en el registro global estándar.</li>
+<li><code>generate_prometheus_metrics(session_factory) -&gt; Tuple[bytes, str]</code>: Genera el formato de texto de métricas Prometheus. Si PROMETHEUS_MULTIPROC_DIR está configurada, utiliza CollectorRegistry con multiprocess.MultiProcessCollector para combinar workers de Gunicorn. Si no, utiliza el REGISTRY estándar.</li>
+</ul>
+<h2 id="appservicesticket_service"><code>app.services.ticket_service</code><a class="headerlink" href="#appservicesticket_service" title="Permanent link">&para;</a></h2>
+<p>Servicio de lógica de negocio para Tickets de Defecto (ITSM) y Bitácora de Eventos. Fase 3 - Ciclo de vida, deduplicación, permisos RBAC y trazabilidad inmutable.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_utc_now()</code></li>
+<li><code>handle_execution_ticket(db: Session, execution: ExecutionHistory, tc: TestCase, env_type: str='TEST') -&gt; Optional[DefectTicket]</code>: Punto de entrada automático invocado tras persistir una ejecución de caso de prueba. Garantiza que la creación del ticket nunca rompa ni revierta la ejecución.</li>
+<li><code>transition_ticket_status(db: Session, ticket_id: int, to_status: str, user: User, comment: Optional[str]=None) -&gt; DefectTicket</code>: Aplica una transición de estado a un ticket respetando la matriz de roles y validaciones. - DEV asignado: ABIERTO o REABIERTO -&gt; EN_PROGRESO -&gt; RESUELTO - QA y ADMIN: RESUELTO -&gt; VERIFICADO -&gt; CERRADO, y reabrir (RESUELTO, VERIFICADO, CERRADO -&gt; REABIERTO) - Transición inválida -&gt; 409 Conflict - Rol sin permiso -&gt; 403 Forbidden - DEV no asignado intentando mover ticket -&gt; 403 Forbidden</li>
+<li><code>assign_ticket(db: Session, ticket_id: int, assigned_to: Optional[int], user: User, comment: Optional[str]=None) -&gt; DefectTicket</code>: Asigna o reasigna un ticket a un usuario activo con rol DEV. Solo QA y ADMIN tienen permisos.</li>
+<li><code>add_ticket_comment(db: Session, ticket_id: int, comment_text: str, user: User) -&gt; TicketEvent</code>: Agrega un comentario a un ticket. Cualquier usuario autenticado puede comentar.</li>
+<li><code>list_tickets(db: Session, project_id: Optional[int]=None, status: Optional[str]=None, severity: Optional[str]=None, assigned_to: Optional[int]=None, my_tickets: bool=False, current_user: Optional[User]=None, limit: int=50, offset: int=0) -&gt; Tuple[List[dict], int]</code>: Listado con filtros y paginación para la interfaz y API.</li>
+<li><code>get_ticket_detail(db: Session, ticket_id: int, current_user: Optional[User]=None) -&gt; dict</code>: Detalle completo de un ticket con eventos ordenados y ejecuciones vinculadas.</li>
+</ul>
+<h2 id="appservicesuser_service"><code>app.services.user_service</code><a class="headerlink" href="#appservicesuser_service" title="Permanent link">&para;</a></h2>
+<p>Servicio para la gestión del ciclo de vida de usuarios, configuración inicial de espacios de trabajo (workspace onboarding) y eliminación / anonimización de cuentas (Fase B).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>generate_unique_username_from_email(db: Session, email: str) -&gt; str</code>: Genera un nombre de usuario seguro y sin colisiones a partir del correo electrónico.</li>
+<li><code>create_user_initial_workspace(db: Session, new_user: User) -&gt; Project</code>: Crea el proyecto personal por defecto del usuario, membresía de OWNER, 2 casos de prueba aprobados (ROW_COUNT y EXISTS), una suite de ejemplo y opcionalmente la conexión Oracle de demostración.</li>
+<li><code>perform_delete_account(db: Session, user: User, confirm_username: str) -&gt; None</code>: Ejecuta el proceso seguro de eliminación de cuenta de usuario según las reglas de la Fase B: - Validación estricta de confirmación de username. - Protección contra eliminar al último ADMIN activo. - Si es el único OWNER de algún proyecto con otros miembros, exige transferir la propiedad primero. - Sus proyectos personales sin otros miembros se eliminan. - La evidencia histórica (execution_history, ticket_events) se conserva anonimizada.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

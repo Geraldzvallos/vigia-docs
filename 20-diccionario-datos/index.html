@@ -1,0 +1,5100 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plataforma de gestión de pruebas de software — SI-784 Calidad y Pruebas de Software (UPT/EPIS)">
+      
+      
+      
+      
+        <link rel="prev" href="../10-estado/">
+      
+      
+        <link rel="next" href="../30-diagrama-er/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Diccionario de datos - Vigía · Documentación técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diccionario-de-datos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Vigía · Documentación técnica" class="md-header__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vigía · Documentación técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Diccionario de datos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Vigía · Documentación técnica" class="md-nav__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vigía · Documentación técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-estado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estado del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance_criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        acceptance_criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowed_hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        allowed_hosts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_case_specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api_case_specs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit_log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci_runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ci_runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection_profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection_profiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defect_tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defect_tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        email_codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        execution_history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_api_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_api_tokens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_invitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_invitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_members
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story_test_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        story_test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite_test_case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        suite_test_case
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_case_steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_case_steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_run_results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_run_results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_suites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ticket_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ticket_events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ticket_executions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ticket_executions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        usage_events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user_sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user_stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_stories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valores-permitidos-enumeraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores permitidos (enumeraciones)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-diagrama-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrama entidad-relación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-diagramas-clases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-componentes-despliegue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de componentes y de despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de endpoints de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/01-titulo-problema-objetivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía — Título, problema y objetivos (Unidad II · Semana 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/02-backlog-historias-invest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/03-plan-de-pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan de pruebas de Vigía (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/04-modelo-de-datos-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de datos v2 (propuesta para revisar)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/05-reporte-cobertura-mutacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte de Cobertura de Código y Pruebas de Mutación (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/06-bdd-gherkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificación y Pruebas BDD con Gherkin en Español (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/07-uat-sus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentos/08-documentacion-automatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación automática: README y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance_criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        acceptance_criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowed_hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        allowed_hosts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_case_specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api_case_specs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        audit_log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci_runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ci_runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection_profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection_profiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defect_tickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defect_tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email_codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        email_codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        execution_history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_api_tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_api_tokens
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_invitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_invitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project_members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project_members
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story_test_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        story_test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite_test_case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        suite_test_case
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_case_steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_case_steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_run_results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_run_results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_suites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ticket_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ticket_events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ticket_executions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ticket_executions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        usage_events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user_sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user_stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_stories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valores-permitidos-enumeraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores permitidos (enumeraciones)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="diccionario-de-datos">Diccionario de datos<a class="headerlink" href="#diccionario-de-datos" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Generado automáticamente desde <code>portal-integrador/app/models/</code> por <code>scripts/docs/generar_docs.py</code>. No se edita a mano.</p>
+</blockquote>
+<p><strong>29 tablas · 270 columnas.</strong> Leyenda de claves: PK = clave primaria, FK = clave foránea, UK = valor único, IX = índice.</p>
+<table>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Clase</th>
+<th style="text-align: right;">Columnas</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#acceptance-criteria"><code>acceptance_criteria</code></a></td>
+<td>AcceptanceCriterion</td>
+<td style="text-align: right;">7</td>
+<td>Criterio de aceptación en formato Dado / Cuando / Entonces.</td>
+</tr>
+<tr>
+<td><a href="#allowed-hosts"><code>allowed_hosts</code></a></td>
+<td>AllowedHost</td>
+<td style="text-align: right;">5</td>
+<td>Dominio al que los casos API de un proyecto pueden llamar (RN18, anti-SSRF).</td>
+</tr>
+<tr>
+<td><a href="#api-case-specs"><code>api_case_specs</code></a></td>
+<td>ApiCaseSpec</td>
+<td style="text-align: right;">8</td>
+<td>Especificación de un caso API: petición HTTP y lo que se espera de la respuesta.</td>
+</tr>
+<tr>
+<td><a href="#audit-log"><code>audit_log</code></a></td>
+<td>AuditLog</td>
+<td style="text-align: right;">8</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ci-runs"><code>ci_runs</code></a></td>
+<td>CiRun</td>
+<td style="text-align: right;">19</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#connection-profiles"><code>connection_profiles</code></a></td>
+<td>ConnectionProfile</td>
+<td style="text-align: right;">12</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#defect-tickets"><code>defect_tickets</code></a></td>
+<td>DefectTicket</td>
+<td style="text-align: right;">17</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#email-codes"><code>email_codes</code></a></td>
+<td>EmailCode</td>
+<td style="text-align: right;">8</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#execution-history"><code>execution_history</code></a></td>
+<td>ExecutionHistory</td>
+<td style="text-align: right;">23</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#notifications"><code>notifications</code></a></td>
+<td>Notification</td>
+<td style="text-align: right;">9</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#project-api-tokens"><code>project_api_tokens</code></a></td>
+<td>ProjectApiToken</td>
+<td style="text-align: right;">9</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#project-integrations"><code>project_integrations</code></a></td>
+<td>ProjectIntegration</td>
+<td style="text-align: right;">11</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#project-invitations"><code>project_invitations</code></a></td>
+<td>ProjectInvitation</td>
+<td style="text-align: right;">8</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#project-members"><code>project_members</code></a></td>
+<td>ProjectMember</td>
+<td style="text-align: right;">6</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#projects"><code>projects</code></a></td>
+<td>Project</td>
+<td style="text-align: right;">5</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#repositories"><code>repositories</code></a></td>
+<td>Repository</td>
+<td style="text-align: right;">9</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#story-test-cases"><code>story_test_cases</code></a></td>
+<td>—</td>
+<td style="text-align: right;">2</td>
+<td>Tabla de asociación.</td>
+</tr>
+<tr>
+<td><a href="#suite-test-case"><code>suite_test_case</code></a></td>
+<td>—</td>
+<td style="text-align: right;">2</td>
+<td>Tabla de asociación.</td>
+</tr>
+<tr>
+<td><a href="#test-case-steps"><code>test_case_steps</code></a></td>
+<td>TestCaseStep</td>
+<td style="text-align: right;">6</td>
+<td>Paso de un caso MANUAL: acción, datos de entrada y resultado esperado.</td>
+</tr>
+<tr>
+<td><a href="#test-cases"><code>test_cases</code></a></td>
+<td>TestCase</td>
+<td style="text-align: right;">10</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#test-run-results"><code>test_run_results</code></a></td>
+<td>TestRunResult</td>
+<td style="text-align: right;">10</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#test-runs"><code>test_runs</code></a></td>
+<td>TestRun</td>
+<td style="text-align: right;">15</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#test-suites"><code>test_suites</code></a></td>
+<td>TestSuite</td>
+<td style="text-align: right;">4</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ticket-events"><code>ticket_events</code></a></td>
+<td>TicketEvent</td>
+<td style="text-align: right;">8</td>
+<td>Bitácora inmutable de eventos asociados a un ticket de defecto. Los registros de esta tabla nunca se modifican ni se eliminan.</td>
+</tr>
+<tr>
+<td><a href="#ticket-executions"><code>ticket_executions</code></a></td>
+<td>—</td>
+<td style="text-align: right;">2</td>
+<td>Tabla de asociación.</td>
+</tr>
+<tr>
+<td><a href="#usage-events"><code>usage_events</code></a></td>
+<td>UsageEvent</td>
+<td style="text-align: right;">11</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#user-sessions"><code>user_sessions</code></a></td>
+<td>UserSession</td>
+<td style="text-align: right;">8</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#user-stories"><code>user_stories</code></a></td>
+<td>UserStory</td>
+<td style="text-align: right;">12</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#users"><code>users</code></a></td>
+<td>User</td>
+<td style="text-align: right;">16</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="acceptance_criteria">acceptance_criteria<a class="headerlink" href="#acceptance_criteria" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.story</code> · clase <code>AcceptanceCriterion</code>.</p>
+<p>Criterio de aceptación en formato Dado / Cuando / Entonces.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>story_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>user_stories.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>given</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>when</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>then</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>bdd_ref</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td>historias.feature:Escenario</td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>story</code> → UserStory.</p>
+<h2 id="allowed_hosts">allowed_hosts<a class="headerlink" href="#allowed_hosts" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.case_details</code> · clase <code>AllowedHost</code>.</p>
+<p>Dominio al que los casos API de un proyecto pueden llamar (RN18, anti-SSRF).</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project.</p>
+<h2 id="api_case_specs">api_case_specs<a class="headerlink" href="#api_case_specs" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.case_details</code> · clase <code>ApiCaseSpec</code>.</p>
+<p>Especificación de un caso API: petición HTTP y lo que se espera de la respuesta.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'GET'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>headers_json</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td nombre: valor>objeto JSON</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expected_status</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>200</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>max_response_ms</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>json_assertions</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td op_ path_ value>lista JSON de</td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>test_case</code> → TestCase.</p>
+<h2 id="audit_log">audit_log<a class="headerlink" href="#audit_log" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.audit_log</code> · clase <code>AuditLog</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>actor_user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>entity</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>entity_id</code></td>
+<td><code>String(100)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>details_json</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>actor</code> → User, <code>project</code> → Project.</p>
+<h2 id="ci_runs">ci_runs<a class="headerlink" href="#ci_runs" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.ci_run</code> · clase <code>CiRun</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>suite_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td></td>
+<td><code>test_suites.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>connection_profile_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td></td>
+<td><code>connection_profiles.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>token_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>project_api_tokens.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>repository_url</code></td>
+<td><code>String(500)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>commit_sha</code></td>
+<td><code>String(100)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>pipeline_url</code></td>
+<td><code>String(500)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>actor</code></td>
+<td><code>String(120)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>'EN_EJECUCION'</code></td>
+<td></td>
+<td>EN_EJECUCION, EXITOSO, FALLIDO, ERROR</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>passed</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>failed</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>skipped</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>started_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>finished_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>duration_ms</code></td>
+<td><code>Float</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>suite</code> → TestSuite, <code>connection_profile</code> → ConnectionProfile, <code>token</code> → ProjectApiToken, <code>execution_histories</code> → ExecutionHistory.</p>
+<h2 id="connection_profiles">connection_profiles<a class="headerlink" href="#connection_profiles" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.connection</code> · clase <code>ConnectionProfile</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>engine</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'ORACLE'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>1521</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>environment_type</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'TEST'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_demo</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>False</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>execution_histories</code> → ExecutionHistory.</p>
+<h2 id="defect_tickets">defect_tickets<a class="headerlink" href="#defect_tickets" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.ticket</code> · clase <code>DefectTicket</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_run_result_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_run_results.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>story_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>user_stories.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>github_issue_url</code></td>
+<td><code>String(500)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>origin_execution_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>execution_history.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>severity</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ALTA, MEDIA</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>TicketStatus.ABIERTO.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>assigned_to</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>resolved_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>closed_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>test_case</code> → TestCase, <code>test_run_result</code> → TestRunResult, <code>story</code> → UserStory, <code>origin_execution</code> → ExecutionHistory, <code>assigned_user</code> → User, <code>creator</code> → User, <code>events</code> → TicketEvent, <code>executions</code> → ExecutionHistory.</p>
+<h2 id="email_codes">email_codes<a class="headerlink" href="#email_codes" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.email_code</code> · clase <code>EmailCode</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>purpose</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td>VERIFY_EMAIL | RESET_PASSWORD</td>
+</tr>
+<tr>
+<td><code>code_hash</code></td>
+<td><code>String(64)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expires_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>attempts</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>used_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>user</code> → User.</p>
+<h2 id="execution_history">execution_history<a class="headerlink" href="#execution_history" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.history</code> · clase <code>ExecutionHistory</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td><code>1</code></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>suite_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>test_suites.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>connection_profile_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>connection_profiles.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td>PASS, FAIL, ERROR</td>
+</tr>
+<tr>
+<td><code>executed_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>duration_ms</code></td>
+<td><code>Float</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>statement_type</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>executed_sql</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validation_type</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expected_result</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>actual_result</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rowcount</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rollback_applied</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>False</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rollback_error</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>error_message</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>executed_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>trigger_source</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'MANUAL'</code></td>
+<td></td>
+<td>MANUAL, CI</td>
+</tr>
+<tr>
+<td><code>ci_run_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>ci_runs.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>case_type</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>'SQL'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>http_status</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>response_excerpt</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>test_case</code> → TestCase, <code>test_suite</code> → TestSuite, <code>connection_profile</code> → ConnectionProfile, <code>executor</code> → User, <code>ci_run</code> → CiRun.</p>
+<h2 id="notifications">notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.notification</code> · clase <code>Notification</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>related_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_read</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>False</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>user</code> → User.</p>
+<h2 id="project_api_tokens">project_api_tokens<a class="headerlink" href="#project_api_tokens" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.ci_token</code> · clase <code>ProjectApiToken</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String(120)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>token_prefix</code></td>
+<td><code>String(8)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>token_hash</code></td>
+<td><code>String(64)</code></td>
+<td style="text-align: center;">No</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_used_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>revoked_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>creator</code> → User, <code>ci_runs</code> → CiRun.</p>
+<h2 id="project_integrations">project_integrations<a class="headerlink" href="#project_integrations" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.integration</code> · clase <code>ProjectIntegration</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>config_encrypted</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>True</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_status</code></td>
+<td><code>String(300)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_used_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project.</p>
+<h2 id="project_invitations">project_invitations<a class="headerlink" href="#project_invitations" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.invitation</code> · clase <code>ProjectInvitation</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>invited_user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>invited_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>OWNER, QA, DEV, DBA</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>InvitationStatus.PENDIENTE.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>responded_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>invited_user</code> → User, <code>invited_by_user</code> → User.</p>
+<h2 id="project_members">project_members<a class="headerlink" href="#project_members" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.project_member</code> · clase <code>ProjectMember</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>OWNER, QA, DEV, DBA</td>
+</tr>
+<tr>
+<td><code>added_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>user</code> → User, <code>added_by_user</code> → User.</p>
+<h2 id="projects">projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.project</code> · clase <code>Project</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>test_cases</code> → TestCase, <code>test_suites</code> → TestSuite, <code>connection_profiles</code> → ConnectionProfile, <code>execution_histories</code> → ExecutionHistory, <code>repositories</code> → Repository, <code>members</code> → ProjectMember, <code>api_tokens</code> → ProjectApiToken, <code>ci_runs</code> → CiRun, <code>invitations</code> → ProjectInvitation, <code>allowed_hosts</code> → AllowedHost, <code>user_stories</code> → UserStory, <code>test_runs</code> → TestRun, <code>integrations</code> → ProjectIntegration.</p>
+<h2 id="repositories">repositories<a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.repository</code> · clase <code>Repository</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td><code>1</code></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String(100)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">No</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>branch</code></td>
+<td><code>String(100)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'main'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'GITHUB'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>String(500)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project.</p>
+<h2 id="story_test_cases">story_test_cases<a class="headerlink" href="#story_test_cases" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.story</code>.</p>
+<p>Tabla de asociación.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>story_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>user_stories.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="suite_test_case">suite_test_case<a class="headerlink" href="#suite_test_case" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.suite</code>.</p>
+<p>Tabla de asociación.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>suite_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>test_suites.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="test_case_steps">test_case_steps<a class="headerlink" href="#test_case_steps" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.case_details</code> · clase <code>TestCaseStep</code>.</p>
+<p>Paso de un caso MANUAL: acción, datos de entrada y resultado esperado.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>input_data</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expected_result</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>test_case</code> → TestCase.</p>
+<h2 id="test_cases">test_cases<a class="headerlink" href="#test_cases" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.test_case</code> · clase <code>TestCase</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td><code>1</code></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>case_type</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>CaseType.SQL.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>sql_query</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expected_result</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validation_type</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'ROW_COUNT'</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'APROBADO'</code></td>
+<td></td>
+<td>PROPUESTO, APROBADO, RECHAZADO</td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>creator</code> → User, <code>execution_histories</code> → ExecutionHistory, <code>steps</code> → TestCaseStep, <code>api_spec</code> → ApiCaseSpec.</p>
+<h2 id="test_run_results">test_run_results<a class="headerlink" href="#test_run_results" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.test_run</code> · clase <code>TestRunResult</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>run_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_runs.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_case_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_cases.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>junit_name</code></td>
+<td><code>String(500)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>ResultStatus.POR_EJECUTAR.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>execution_history_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>execution_history.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>executed_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>executed_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>duration_ms</code></td>
+<td><code>Float</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>run</code> → TestRun, <code>test_case</code> → TestCase, <code>execution</code> → ExecutionHistory.</p>
+<h2 id="test_runs">test_runs<a class="headerlink" href="#test_runs" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.test_run</code> · clase <code>TestRun</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>suite_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>test_suites.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>RunOrigin.MANUAL.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>RunStatus.EN_CURSO.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>started_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>started_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>finished_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ci_run_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>ci_runs.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>passed</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>failed</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>blocked</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>0</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>suite</code> → TestSuite, <code>results</code> → TestRunResult.</p>
+<h2 id="test_suites">test_suites<a class="headerlink" href="#test_suites" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.suite</code> · clase <code>TestSuite</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK</td>
+<td><code>1</code></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>test_cases</code> → TestCase, <code>execution_histories</code> → ExecutionHistory.</p>
+<h2 id="ticket_events">ticket_events<a class="headerlink" href="#ticket_events" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.ticket</code> · clase <code>TicketEvent</code>.</p>
+<p>Bitácora inmutable de eventos asociados a un ticket de defecto. Los registros de esta tabla nunca se modifican ni se eliminan.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ticket_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>defect_tickets.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>from_status</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>to_status</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>ticket</code> → DefectTicket, <code>user</code> → User.</p>
+<h2 id="ticket_executions">ticket_executions<a class="headerlink" href="#ticket_executions" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.ticket</code>.</p>
+<p>Tabla de asociación.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ticket_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>defect_tickets.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>execution_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK FK</td>
+<td></td>
+<td><code>execution_history.id</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage_events">usage_events<a class="headerlink" href="#usage_events" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.usage_event</code> · clase <code>UsageEvent</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>event_type</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td><code>String(50)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>http_method</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>route_template</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>status_code</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>duration_ms</code></td>
+<td><code>Float</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'WEB'</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>user</code> → User, <code>project</code> → Project.</p>
+<h2 id="user_sessions">user_sessions<a class="headerlink" href="#user_sessions" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.user_session</code> · clase <code>UserSession</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>jti</code></td>
+<td><code>String(64)</code></td>
+<td style="text-align: center;">No</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_seen_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>expires_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">No</td>
+<td>IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>revoked_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>user</code> → User.</p>
+<h2 id="user_stories">user_stories<a class="headerlink" href="#user_stories" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.story</code> · clase <code>UserStory</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>FK IX</td>
+<td></td>
+<td><code>projects.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>HU-01</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>String(200)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>as_a</code></td>
+<td><code>String(300)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Como ...</td>
+</tr>
+<tr>
+<td><code>i_want</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>quiero ...</td>
+</tr>
+<tr>
+<td><code>so_that</code></td>
+<td><code>Text</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td>para ...</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>StoryStatus.PENDIENTE.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>String(10)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>StoryPriority.MEDIA.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">Sí</td>
+<td>FK</td>
+<td></td>
+<td><code>users.id</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>project</code> → Project, <code>criteria</code> → AcceptanceCriterion, <code>test_cases</code> → TestCase.</p>
+<h2 id="users">users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<p>Módulo <code>app.models.user</code> · clase <code>User</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Tipo</th>
+<th style="text-align: center;">Nulo</th>
+<th>Claves</th>
+<th>Por defecto</th>
+<th>Referencia</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td>PK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>full_name</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">Sí</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>password_hash</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td><code>String</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>UserRole.USER.value</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>True</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>token_version</code></td>
+<td><code>Integer</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>1</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td><code>get_utc_now</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_login_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>auth_provider</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>'local'</code></td>
+<td></td>
+<td>'local' or 'google'</td>
+</tr>
+<tr>
+<td><code>google_sub</code></td>
+<td><code>String(255)</code></td>
+<td style="text-align: center;">Sí</td>
+<td>UK IX</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>terms_accepted_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>terms_version</code></td>
+<td><code>String(20)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>email_verified</code></td>
+<td><code>Boolean</code></td>
+<td style="text-align: center;">No</td>
+<td></td>
+<td><code>False</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>email_verified_at</code></td>
+<td><code>DateTime(timezone=True)</code></td>
+<td style="text-align: center;">Sí</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Relaciones ORM: <code>test_cases_created</code> → TestCase, <code>executions_run</code> → ExecutionHistory, <code>project_memberships</code> → ProjectMember, <code>invitations_received</code> → ProjectInvitation, <code>invitations_sent</code> → ProjectInvitation, <code>notifications</code> → Notification, <code>email_codes</code> → EmailCode.</p>
+<h2 id="valores-permitidos-enumeraciones">Valores permitidos (enumeraciones)<a class="headerlink" href="#valores-permitidos-enumeraciones" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Enumeración</th>
+<th>Módulo</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CaseType</code></td>
+<td><code>app.models.test_case</code></td>
+<td><code>SQL</code>, <code>MANUAL</code>, <code>API</code></td>
+</tr>
+<tr>
+<td><code>CaseTypeEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>SQL</code>, <code>MANUAL</code>, <code>API</code></td>
+</tr>
+<tr>
+<td><code>EmailCodePurpose</code></td>
+<td><code>app.models.email_code</code></td>
+<td><code>VERIFY_EMAIL</code>, <code>RESET_PASSWORD</code></td>
+</tr>
+<tr>
+<td><code>EnvironmentTypeEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>TEST</code>, <code>STAGING</code>, <code>PRODUCTION</code></td>
+</tr>
+<tr>
+<td><code>GitProviderEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>GITHUB</code>, <code>GITLAB</code>, <code>BITBUCKET</code>, <code>AZURE_DEVOPS</code>, <code>OTHER</code></td>
+</tr>
+<tr>
+<td><code>HttpMethodEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>, <code>HEAD</code>, <code>OPTIONS</code></td>
+</tr>
+<tr>
+<td><code>IntegrationKind</code></td>
+<td><code>app.models.integration</code></td>
+<td><code>GITHUB</code>, <code>DISCORD</code>, <code>SLACK</code></td>
+</tr>
+<tr>
+<td><code>IntegrationKindEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>GITHUB</code>, <code>DISCORD</code>, <code>SLACK</code></td>
+</tr>
+<tr>
+<td><code>InvitationStatus</code></td>
+<td><code>app.models.invitation</code></td>
+<td><code>PENDIENTE</code>, <code>ACEPTADA</code>, <code>RECHAZADA</code>, <code>CANCELADA</code></td>
+</tr>
+<tr>
+<td><code>NotificationType</code></td>
+<td><code>app.models.notification</code></td>
+<td><code>INVITACION_RECIBIDA</code>, <code>INVITACION_ACEPTADA</code>, <code>INVITACION_RECHAZADA</code>, <code>ROL_CAMBIADO</code>, <code>REMOVIDO_DEL_PROYECTO</code>, <code>TICKET_ASIGNADO</code>, <code>TICKET_ESTADO</code>, <code>CI_FALLIDO</code></td>
+</tr>
+<tr>
+<td><code>ProjectRole</code></td>
+<td><code>app.models.project_member</code></td>
+<td><code>OWNER</code>, <code>QA</code>, <code>DEV</code>, <code>DBA</code></td>
+</tr>
+<tr>
+<td><code>ProjectRoleEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>OWNER</code>, <code>QA</code>, <code>DEV</code>, <code>DBA</code></td>
+</tr>
+<tr>
+<td><code>ResultStatus</code></td>
+<td><code>app.models.test_run</code></td>
+<td><code>POR_EJECUTAR</code>, <code>APROBADO</code>, <code>FALLIDO</code>, <code>BLOQUEADO</code>, <code>ERROR</code>, <code>OMITIDO</code></td>
+</tr>
+<tr>
+<td><code>ResultStatusEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>POR_EJECUTAR</code>, <code>APROBADO</code>, <code>FALLIDO</code>, <code>BLOQUEADO</code>, <code>ERROR</code>, <code>OMITIDO</code></td>
+</tr>
+<tr>
+<td><code>RunOrigin</code></td>
+<td><code>app.models.test_run</code></td>
+<td><code>MANUAL</code>, <code>CI</code>, <code>JUNIT</code></td>
+</tr>
+<tr>
+<td><code>RunStatus</code></td>
+<td><code>app.models.test_run</code></td>
+<td><code>EN_CURSO</code>, <code>FINALIZADA</code></td>
+</tr>
+<tr>
+<td><code>StoryPriority</code></td>
+<td><code>app.models.story</code></td>
+<td><code>ALTA</code>, <code>MEDIA</code>, <code>BAJA</code></td>
+</tr>
+<tr>
+<td><code>StoryPriorityEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>ALTA</code>, <code>MEDIA</code>, <code>BAJA</code></td>
+</tr>
+<tr>
+<td><code>StoryStatus</code></td>
+<td><code>app.models.story</code></td>
+<td><code>PENDIENTE</code>, <code>EN_PROGRESO</code>, <code>HECHA</code></td>
+</tr>
+<tr>
+<td><code>StoryStatusEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>PENDIENTE</code>, <code>EN_PROGRESO</code>, <code>HECHA</code></td>
+</tr>
+<tr>
+<td><code>TestCaseStatus</code></td>
+<td><code>app.models.test_case</code></td>
+<td><code>PROPUESTO</code>, <code>APROBADO</code>, <code>RECHAZADO</code></td>
+</tr>
+<tr>
+<td><code>TestCaseStatusEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>PROPUESTO</code>, <code>APROBADO</code>, <code>RECHAZADO</code></td>
+</tr>
+<tr>
+<td><code>TicketAction</code></td>
+<td><code>app.models.ticket</code></td>
+<td><code>CREADO</code>, <code>ASIGNADO</code>, <code>CAMBIO_ESTADO</code>, <code>COMENTARIO</code>, <code>EJECUCION_VINCULADA</code>, <code>REEJECUCION_EXITOSA</code></td>
+</tr>
+<tr>
+<td><code>TicketSeverity</code></td>
+<td><code>app.models.ticket</code></td>
+<td><code>ALTA</code>, <code>MEDIA</code>, <code>BAJA</code></td>
+</tr>
+<tr>
+<td><code>TicketStatus</code></td>
+<td><code>app.models.ticket</code></td>
+<td><code>ABIERTO</code>, <code>EN_PROGRESO</code>, <code>RESUELTO</code>, <code>VERIFICADO</code>, <code>CERRADO</code>, <code>REABIERTO</code></td>
+</tr>
+<tr>
+<td><code>UserRole</code></td>
+<td><code>app.models.user</code></td>
+<td><code>ADMIN</code>, <code>USER</code></td>
+</tr>
+<tr>
+<td><code>UserRoleEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>ADMIN</code>, <code>USER</code></td>
+</tr>
+<tr>
+<td><code>ValidationTypeEnum</code></td>
+<td><code>app.models.schemas</code></td>
+<td><code>ROW_COUNT</code>, <code>EXISTS</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

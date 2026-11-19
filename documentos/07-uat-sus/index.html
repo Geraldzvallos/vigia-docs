@@ -1,0 +1,2608 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plataforma de gestión de pruebas de software — SI-784 Calidad y Pruebas de Software (UPT/EPIS)">
+      
+      
+      
+      
+        <link rel="prev" href="../06-bdd-gherkin/">
+      
+      
+        <link rel="next" href="../08-documentacion-automatica/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS - Vigía · Documentación técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plan-y-reporte-de-pruebas-de-aceptacion-del-usuario-uat-con-evaluacion-sus" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-header__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vigía · Documentación técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-nav__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vigía · Documentación técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-estado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estado del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20-diccionario-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../30-diagrama-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrama entidad-relación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40-diagramas-clases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../45-componentes-despliegue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de componentes y de despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de endpoints de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-titulo-problema-objetivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía — Título, problema y objetivos (Unidad II · Semana 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-backlog-historias-invest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-plan-de-pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan de pruebas de Vigía (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-modelo-de-datos-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de datos v2 (propuesta para revisar)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-reporte-cobertura-mutacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte de Cobertura de Código y Pruebas de Mutación (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-bdd-gherkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificación y Pruebas BDD con Gherkin en Español (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivo-de-la-uat-user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objetivo de la UAT (User Acceptance Testing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-perfil-objetivo-de-participantes-muestra-planificada-minimo-5-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Perfil Objetivo de Participantes (Muestra Planificada: Mínimo 5 Usuarios)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Perfil Objetivo de Participantes (Muestra Planificada: Mínimo 5 Usuarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-participantes-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de Participantes Reales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-guion-de-tareas-de-la-prueba-uat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Guion de Tareas de la Prueba UAT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Guion de Tareas de la Prueba UAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarea-1-inicio-de-sesion-y-seleccion-del-proyecto-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 1: Inicio de sesión y selección del proyecto de trabajo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-2-creacion-de-una-historia-de-usuario-con-criterios-dadocuandoentonces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 2: Creación de una historia de usuario con criterios Dado/Cuando/Entonces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-3-creacion-de-un-caso-de-prueba-manual-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 3: Creación de un caso de prueba MANUAL estructurado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-4-vinculacion-del-caso-de-prueba-a-la-historia-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 4: Vinculación del caso de prueba a la historia de usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-5-creacion-de-suite-e-inicio-de-una-corrida-de-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 5: Creación de suite e inicio de una corrida de pruebas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-6-calificacion-de-caso-manual-como-fallido-con-justificacion-regla-rn19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 6: Calificación de caso manual como FALLIDO con justificación (Regla RN19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-7-finalizacion-de-la-corrida-revision-de-defecto-y-matriz-de-trazabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 7: Finalización de la corrida, revisión de defecto y matriz de trazabilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-criterios-de-aceptacion-por-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Criterios de Aceptación por Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cuestionario-sus-system-usability-scale-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cuestionario SUS (System Usability Scale) Estándar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-metodologia-de-calculo-e-interpretacion-del-puntaje-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Metodología de Cálculo e Interpretación del Puntaje SUS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Metodología de Cálculo e Interpretación del Puntaje SUS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-formula-matematica-de-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Fórmula Matemática de Cálculo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-escala-de-interpretacion-brooke-bangor-kortum-miller-2008" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Escala de Interpretación (Brooke / Bangor, Kortum &amp; Miller 2008)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-automatizacion-del-procesamiento-script-sus_calcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Automatización del Procesamiento: Script sus_calc.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Automatización del Procesamiento: Script sus_calc.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo de Uso:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-resultados-de-la-sesion-uat-17112026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Resultados de la Sesión UAT (17/11/2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Resultados de la Sesión UAT (17/11/2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-ejecucion-de-tareas-por-participante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Ejecución de Tareas por Participante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-resultados-del-cuestionario-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Resultados del Cuestionario SUS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricas-estadisticas-consolidadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métricas Estadísticas Consolidadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-hallazgos-cualitativos-y-recomendaciones-de-mejora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Hallazgos Cualitativos y Recomendaciones de Mejora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Hallazgos Cualitativos y Recomendaciones de Mejora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-lo-que-destacaron-los-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Lo que destacaron los participantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-problemas-encontrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Problemas encontrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-conclusiones-y-limitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Conclusiones y Limitaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Conclusiones y Limitaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Conclusiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-limitaciones-y-amenazas-a-la-validez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Limitaciones y amenazas a la validez
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-documentacion-automatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación automática: README y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivo-de-la-uat-user-acceptance-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objetivo de la UAT (User Acceptance Testing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-perfil-objetivo-de-participantes-muestra-planificada-minimo-5-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Perfil Objetivo de Participantes (Muestra Planificada: Mínimo 5 Usuarios)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Perfil Objetivo de Participantes (Muestra Planificada: Mínimo 5 Usuarios)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-participantes-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de Participantes Reales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-guion-de-tareas-de-la-prueba-uat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Guion de Tareas de la Prueba UAT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Guion de Tareas de la Prueba UAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarea-1-inicio-de-sesion-y-seleccion-del-proyecto-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 1: Inicio de sesión y selección del proyecto de trabajo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-2-creacion-de-una-historia-de-usuario-con-criterios-dadocuandoentonces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 2: Creación de una historia de usuario con criterios Dado/Cuando/Entonces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-3-creacion-de-un-caso-de-prueba-manual-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 3: Creación de un caso de prueba MANUAL estructurado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-4-vinculacion-del-caso-de-prueba-a-la-historia-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 4: Vinculación del caso de prueba a la historia de usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-5-creacion-de-suite-e-inicio-de-una-corrida-de-pruebas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 5: Creación de suite e inicio de una corrida de pruebas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-6-calificacion-de-caso-manual-como-fallido-con-justificacion-regla-rn19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 6: Calificación de caso manual como FALLIDO con justificación (Regla RN19)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarea-7-finalizacion-de-la-corrida-revision-de-defecto-y-matriz-de-trazabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarea 7: Finalización de la corrida, revisión de defecto y matriz de trazabilidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-criterios-de-aceptacion-por-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Criterios de Aceptación por Tarea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cuestionario-sus-system-usability-scale-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cuestionario SUS (System Usability Scale) Estándar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-metodologia-de-calculo-e-interpretacion-del-puntaje-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Metodología de Cálculo e Interpretación del Puntaje SUS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Metodología de Cálculo e Interpretación del Puntaje SUS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-formula-matematica-de-calculo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Fórmula Matemática de Cálculo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-escala-de-interpretacion-brooke-bangor-kortum-miller-2008" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Escala de Interpretación (Brooke / Bangor, Kortum &amp; Miller 2008)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-automatizacion-del-procesamiento-script-sus_calcpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Automatización del Procesamiento: Script sus_calc.py
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Automatización del Procesamiento: Script sus_calc.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo de Uso:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-resultados-de-la-sesion-uat-17112026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Resultados de la Sesión UAT (17/11/2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Resultados de la Sesión UAT (17/11/2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-ejecucion-de-tareas-por-participante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Ejecución de Tareas por Participante
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-resultados-del-cuestionario-sus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Resultados del Cuestionario SUS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricas-estadisticas-consolidadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métricas Estadísticas Consolidadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-hallazgos-cualitativos-y-recomendaciones-de-mejora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Hallazgos Cualitativos y Recomendaciones de Mejora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Hallazgos Cualitativos y Recomendaciones de Mejora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-lo-que-destacaron-los-participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Lo que destacaron los participantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-problemas-encontrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Problemas encontrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-conclusiones-y-limitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Conclusiones y Limitaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Conclusiones y Limitaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Conclusiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-limitaciones-y-amenazas-a-la-validez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Limitaciones y amenazas a la validez
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="plan-y-reporte-de-pruebas-de-aceptacion-del-usuario-uat-con-evaluacion-sus">Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS<a class="headerlink" href="#plan-y-reporte-de-pruebas-de-aceptacion-del-usuario-uat-con-evaluacion-sus" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Metadato</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Proyecto</strong></td>
+<td>Vigía — Plataforma de Gestión y Ejecución de Pruebas</td>
+</tr>
+<tr>
+<td><strong>Curso</strong></td>
+<td>SI-784 Calidad y Pruebas de Software (UPT / EPIS)</td>
+</tr>
+<tr>
+<td><strong>Responsables</strong></td>
+<td>Víctor Carretero (viccarretero) · Gerald Zevallos (Geraldzvallos)</td>
+</tr>
+<tr>
+<td><strong>Fecha de corte</strong></td>
+<td>17/11/2026</td>
+</tr>
+<tr>
+<td><strong>Versión</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td><strong>Metodología</strong></td>
+<td>User Acceptance Testing (UAT) + System Usability Scale (SUS, Brooke 1996)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-objetivo-de-la-uat-user-acceptance-testing">1. Objetivo de la UAT (User Acceptance Testing)<a class="headerlink" href="#1-objetivo-de-la-uat-user-acceptance-testing" title="Permanent link">&para;</a></h2>
+<p>El objetivo central de las pruebas de aceptación de usuario (UAT) es validar que la plataforma <strong>Vigía</strong> cumple de manera efectiva con los requisitos operacionales, funcionales y de negocio de los usuarios finales en condiciones representativas de uso real. </p>
+<p>Específicamente, la UAT persigue:
+1. <strong>Comprobar la completitud funcional</strong> de las nuevas capacidades de la versión 2.0: historias de usuario con criterios Dado/Cuando/Entonces, casos MANUAL y API, corridas de prueba consolidadas, importación de reportes JUnit XML, matriz de trazabilidad y gestión de defectos (ITSM).
+2. <strong>Evaluar la usabilidad y experiencia de usuario (UX)</strong> mediante la escala estandarizada <strong>SUS (System Usability Scale)</strong> para cuantificar la facilidad de aprendizaje, consistencia y satisfacción percibida.
+3. <strong>Validar las reglas de negocio clave en interfaz</strong>, tales como el comentario obligatorio en casos manuales fallidos (<strong>RN19</strong>), el aislamiento de proyectos y el gobierno de roles (<strong>RBAC</strong>).</p>
+<hr />
+<h2 id="2-perfil-objetivo-de-participantes-muestra-planificada-minimo-5-usuarios">2. Perfil Objetivo de Participantes (Muestra Planificada: Mínimo 5 Usuarios)<a class="headerlink" href="#2-perfil-objetivo-de-participantes-muestra-planificada-minimo-5-usuarios" title="Permanent link">&para;</a></h2>
+<p>Para asegurar una retroalimentación representativa y diversa, la sesión de pruebas define un perfil objetivo de 5 participantes pertenecientes a diferentes roles del público usuario de la plataforma:</p>
+<table>
+<thead>
+<tr>
+<th>Perfil Objetivo</th>
+<th>Rol / Experiencia Esperada</th>
+<th>Criterio de Selección y Enfoque en la Prueba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Perfil 1 — QA / Tester Senior</strong></td>
+<td>3+ años en QA funcional y automatización de pruebas</td>
+<td>Evaluar el flujo completo de diseño y ejecución de casos, exigencia de comentarios y trazabilidad hacia defectos.</td>
+</tr>
+<tr>
+<td><strong>Perfil 2 — Desarrollador Backend</strong></td>
+<td>2+ años en desarrollo de microservicios y APIs REST</td>
+<td>Evaluar la claridad del módulo de importación JUnit XML, el manejo de errores HTTP y la navegación de endpoints.</td>
+</tr>
+<tr>
+<td><strong>Perfil 3 — Líder de Proyecto / PO</strong></td>
+<td>3+ años en gestión ágil y entrega continua de software</td>
+<td>Evaluar el registro de historias de usuario, los criterios Dado/Cuando/Entonces y la matriz de trazabilidad global.</td>
+</tr>
+<tr>
+<td><strong>Perfil 4 — Estudiante de Ingeniería de Sistemas</strong></td>
+<td>Alumno de últimos ciclos (EPIS/UPT) con formación en testing</td>
+<td>Evaluar la curva de aprendizaje inicial, la intuición de la interfaz y la facilidad de uso sin capacitación previa.</td>
+</tr>
+<tr>
+<td><strong>Perfil 5 — Analista QA Junior / Tester Manual</strong></td>
+<td>~1 año en ejecución de pruebas manuales y reporte de bugs</td>
+<td>Evaluar la ejecución paso a paso de casos manuales, el registro de evidencias y la visibilidad de estados en corridas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registro-de-participantes-reales">Registro de Participantes Reales<a class="headerlink" href="#registro-de-participantes-reales" title="Permanent link">&para;</a></h3>
+<p>Sesión realizada el <strong>17/11/2026</strong> sobre producción (v2.0.2), con un facilitador. Cada participante usó su propia cuenta y su propio proyecto <code>UAT - &lt;iniciales&gt;</code>. Los cinco aceptaron participar de forma anónima (consentimiento en el formulario).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ID</th>
+<th>Iniciales</th>
+<th>Rol / Ocupación Real</th>
+<th style="text-align: center;">Experiencia previa con herramientas de gestión de pruebas</th>
+<th style="text-align: center;">Fecha de la Sesión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>P1</strong></td>
+<td>DSD</td>
+<td>Estudiante de Ingeniería de Sistemas (EPIS/UPT)</td>
+<td style="text-align: center;">Básica</td>
+<td style="text-align: center;">17/11/2026</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P2</strong></td>
+<td>PQC</td>
+<td>Estudiante de Ingeniería de Sistemas (EPIS/UPT)</td>
+<td style="text-align: center;">Básica</td>
+<td style="text-align: center;">17/11/2026</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P3</strong></td>
+<td>MJCC</td>
+<td>Estudiante de Ingeniería de Sistemas (EPIS/UPT)</td>
+<td style="text-align: center;">Ninguna</td>
+<td style="text-align: center;">17/11/2026</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P4</strong></td>
+<td>AAZ</td>
+<td>Estudiante de Ingeniería de Sistemas (EPIS/UPT)</td>
+<td style="text-align: center;">Ninguna</td>
+<td style="text-align: center;">17/11/2026</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P5</strong></td>
+<td>ACER</td>
+<td>Estudiante de Ingeniería de Sistemas (EPIS/UPT)</td>
+<td style="text-align: center;">Básica</td>
+<td style="text-align: center;">17/11/2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Desviación respecto al perfil planificado:</strong> los cinco participantes corresponden al Perfil 4 (estudiantes). No participaron perfiles de QA senior, desarrollo ni Product Owner; se registra como limitación en la sección 10.</p>
+<hr />
+<h2 id="3-guion-de-tareas-de-la-prueba-uat">3. Guion de Tareas de la Prueba UAT<a class="headerlink" href="#3-guion-de-tareas-de-la-prueba-uat" title="Permanent link">&para;</a></h2>
+<p>Los participantes ejecutan un guion secuencial de <strong>7 tareas concretas</strong> en el entorno web de Vigía, simulando el ciclo de vida de un sprint de pruebas:</p>
+<div class="highlight"><pre><span></span><code>[Tarea 1: Acceso al Proyecto]
+       │
+       ▼
+[Tarea 2: Crear Historia con Criterios Dado/Cuando/Entonces]
+       │
+       ▼
+[Tarea 3: Crear Caso de Prueba MANUAL]
+       │
+       ▼
+[Tarea 4: Vincular Caso a la Historia]
+       │
+       ▼
+[Tarea 5: Iniciar Corrida de Pruebas]
+       │
+       ▼
+[Tarea 6: Registrar Fallo Manual con Justificación (RN19)]
+       │
+       ▼
+[Tarea 7: Finalizar Corrida y Validar Defecto en Trazabilidad]
+</code></pre></div>
+<h3 id="tarea-1-inicio-de-sesion-y-seleccion-del-proyecto-de-trabajo">Tarea 1: Inicio de sesión y selección del proyecto de trabajo<a class="headerlink" href="#tarea-1-inicio-de-sesion-y-seleccion-del-proyecto-de-trabajo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> El participante inicia sesión con sus credenciales asignadas, accede al panel principal de proyectos y selecciona el proyecto asignado a su sesión de prueba.</li>
+<li><strong>Acción:</strong> Ingresar correo y contraseña $\to$ Iniciar Sesión $\to$ Seleccionar proyecto activo.</li>
+</ul>
+<h3 id="tarea-2-creacion-de-una-historia-de-usuario-con-criterios-dadocuandoentonces">Tarea 2: Creación de una historia de usuario con criterios Dado/Cuando/Entonces<a class="headerlink" href="#tarea-2-creacion-de-una-historia-de-usuario-con-criterios-dadocuandoentonces" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> Registrar una nueva historia en el módulo de historias del proyecto, especificando título, estructura ágil ("Como / Quiero / Para") y al menos dos criterios de aceptación en formato Dado/Cuando/Entonces.</li>
+<li><strong>Acción:</strong> Módulo <em>Historias</em> $\to$ <em>Nueva Historia</em> $\to$ Completar formulario $\to$ Guardar.</li>
+</ul>
+<h3 id="tarea-3-creacion-de-un-caso-de-prueba-manual-estructurado">Tarea 3: Creación de un caso de prueba MANUAL estructurado<a class="headerlink" href="#tarea-3-creacion-de-un-caso-de-prueba-manual-estructurado" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> Diseñar un caso de prueba con tipo de ejecución MANUAL, agregando pasos ordenados de acción y sus correspondientes resultados esperados.</li>
+<li><strong>Acción:</strong> Módulo <em>Casos de Prueba</em> $\to$ <em>Nuevo Caso</em> $\to$ Tipo MANUAL $\to$ Añadir pasos $\to$ Guardar.</li>
+</ul>
+<h3 id="tarea-4-vinculacion-del-caso-de-prueba-a-la-historia-de-usuario">Tarea 4: Vinculación del caso de prueba a la historia de usuario<a class="headerlink" href="#tarea-4-vinculacion-del-caso-de-prueba-a-la-historia-de-usuario" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> Establecer la relación de trazabilidad entre la historia registrada en la Tarea 2 y el caso de prueba diseñado en la Tarea 3.</li>
+<li><strong>Acción:</strong> Detalle de la Historia $\to$ Pestaña <em>Casos Vinculados</em> $\to$ Seleccionar y asociar caso.</li>
+</ul>
+<h3 id="tarea-5-creacion-de-suite-e-inicio-de-una-corrida-de-pruebas">Tarea 5: Creación de suite e inicio de una corrida de pruebas<a class="headerlink" href="#tarea-5-creacion-de-suite-e-inicio-de-una-corrida-de-pruebas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> Agrupar el caso en una suite de prueba e iniciar una nueva corrida de ejecución manual.</li>
+<li><strong>Acción:</strong> Módulo <em>Suites</em> $\to$ Crear/Seleccionar suite $\to$ Iniciar Corrida $\to$ Confirmar nombre de corrida.</li>
+</ul>
+<h3 id="tarea-6-calificacion-de-caso-manual-como-fallido-con-justificacion-regla-rn19">Tarea 6: Calificación de caso manual como FALLIDO con justificación (Regla RN19)<a class="headerlink" href="#tarea-6-calificacion-de-caso-manual-como-fallido-con-justificacion-regla-rn19" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> En la corrida en curso, calificar el caso manual como <code>FALLIDO</code>. Verificar que el sistema rechace el envío si el comentario está vacío y registrar una justificación descriptiva del fallo.</li>
+<li><strong>Acción:</strong> Seleccionar caso en corrida $\to$ Marcar <code>FALLIDO</code> sin comentario (comprobar validación) $\to$ Escribir comentario descriptivo $\to$ Guardar resultado.</li>
+</ul>
+<h3 id="tarea-7-finalizacion-de-la-corrida-revision-de-defecto-y-matriz-de-trazabilidad">Tarea 7: Finalización de la corrida, revisión de defecto y matriz de trazabilidad<a class="headerlink" href="#tarea-7-finalizacion-de-la-corrida-revision-de-defecto-y-matriz-de-trazabilidad" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Descripción:</strong> Finalizar formalmente la corrida de pruebas, verificar la generación automática del ticket de defecto vinculado e inspeccionar la matriz de trazabilidad y métricas del proyecto.</li>
+<li><strong>Acción:</strong> Botón <em>Finalizar Corrida</em> $\to$ Verificar ticket creado $\to$ Módulo <em>Trazabilidad</em> $\to$ Comprobar estado <code>CON_FALLOS</code>.</li>
+</ul>
+<hr />
+<h2 id="4-criterios-de-aceptacion-por-tarea">4. Criterios de Aceptación por Tarea<a class="headerlink" href="#4-criterios-de-aceptacion-por-tarea" title="Permanent link">&para;</a></h2>
+<p>Cada tarea es evaluada bajo tres dimensiones objetivas:
+1. <strong>Éxito (Completada Sí/No):</strong> Si el participante logró el objetivo de la tarea sin intervención del facilitador.
+2. <strong>Tiempo de Ejecución:</strong> Tiempo medido en minutos vs. umbral objetivo.
+3. <strong>Errores Observados:</strong> Cantidad de desvíos, clics erróneos o confusiones durante el flujo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tarea</th>
+<th>Objetivo Esperado</th>
+<th style="text-align: center;">Tiempo Objetivo</th>
+<th style="text-align: center;">Tiempo Máximo</th>
+<th>Criterio de Éxito</th>
+<th style="text-align: center;">Errores Tolerados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>T1</strong></td>
+<td>Acceso al panel y selección del proyecto</td>
+<td style="text-align: center;">$\le 1$ min</td>
+<td style="text-align: center;">2 min</td>
+<td>El usuario visualiza el dashboard del proyecto correcto.</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T2</strong></td>
+<td>Historia guardada con código automático <code>HU-NN</code> y criterios</td>
+<td style="text-align: center;">$\le 3$ min</td>
+<td style="text-align: center;">5 min</td>
+<td>Historia visible en backlog con estado <code>PENDIENTE</code> y criterios registrados.</td>
+<td style="text-align: center;">$\le 1$</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T3</strong></td>
+<td>Caso MANUAL registrado con pasos y resultado esperado</td>
+<td style="text-align: center;">$\le 2$ min</td>
+<td style="text-align: center;">4 min</td>
+<td>Caso visible en listado con tipo MANUAL y pasos persistidos.</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T4</strong></td>
+<td>Caso vinculado reflejado en la historia</td>
+<td style="text-align: center;">$\le 1$ min</td>
+<td style="text-align: center;">2 min</td>
+<td>El caso aparece listado dentro de la historia sin duplicados.</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T5</strong></td>
+<td>Corrida iniciada en estado <code>EN_CURSO</code></td>
+<td style="text-align: center;">$\le 1.5$ min</td>
+<td style="text-align: center;">3 min</td>
+<td>Corrida creada con resultado del caso manual en <code>POR_EJECUTAR</code>.</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T6</strong></td>
+<td>Regla RN19 aplicada: bloqueo sin texto y registro con comentario</td>
+<td style="text-align: center;">$\le 2$ min</td>
+<td style="text-align: center;">4 min</td>
+<td>Sistema exige comentario; resultado guardado exitosamente como <code>FALLIDO</code>.</td>
+<td style="text-align: center;">$\le 1$</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T7</strong></td>
+<td>Corrida <code>FINALIZADA</code>, ticket creado y trazabilidad actualizada</td>
+<td style="text-align: center;">$\le 2.5$ min</td>
+<td style="text-align: center;">4 min</td>
+<td>Ticket visible con origen en la corrida y trazabilidad reporta <code>CON_FALLOS</code>.</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-cuestionario-sus-system-usability-scale-estandar">5. Cuestionario SUS (System Usability Scale) Estándar<a class="headerlink" href="#5-cuestionario-sus-system-usability-scale-estandar" title="Permanent link">&para;</a></h2>
+<p>Al concluir las tareas del guion, cada participante responde individualmente el cuestionario SUS de <strong>10 preguntas</strong> estandarizado por John Brooke (1996), traducido al español, utilizando una escala Likert de 1 a 5:
+- <strong>1:</strong> Totalmente en desacuerdo
+- <strong>2:</strong> En desacuerdo
+- <strong>3:</strong> Neutral / Indiferente
+- <strong>4:</strong> De acuerdo
+- <strong>5:</strong> Totalmente de acuerdo</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">N°</th>
+<th>Enunciado de la Pregunta</th>
+<th style="text-align: center;">Polaridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>P1</strong></td>
+<td>Creo que me gustaría usar este sistema con frecuencia.</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P2</strong></td>
+<td>Encontré el sistema innecesariamente complejo.</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P3</strong></td>
+<td>Pensé que el sistema era fácil de usar.</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P4</strong></td>
+<td>Creo que necesitaría el apoyo de una persona técnica para poder usar este sistema.</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P5</strong></td>
+<td>Encontré que las diversas funciones en este sistema estaban bien integradas.</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P6</strong></td>
+<td>Pensé que había demasiada inconsistencia en este sistema.</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P7</strong></td>
+<td>Imagino que la mayoría de la gente aprendería a usar este sistema muy rápidamente.</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P8</strong></td>
+<td>Encontré el sistema muy engorroso de usar.</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P9</strong></td>
+<td>Me sentí muy confiado al usar el sistema.</td>
+<td style="text-align: center;">Positiva</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P10</strong></td>
+<td>Necesité aprender muchas cosas antes de poder empezar a usar este sistema.</td>
+<td style="text-align: center;">Negativa</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-metodologia-de-calculo-e-interpretacion-del-puntaje-sus">6. Metodología de Cálculo e Interpretación del Puntaje SUS<a class="headerlink" href="#6-metodologia-de-calculo-e-interpretacion-del-puntaje-sus" title="Permanent link">&para;</a></h2>
+<h3 id="61-formula-matematica-de-calculo">6.1 Fórmula Matemática de Cálculo<a class="headerlink" href="#61-formula-matematica-de-calculo" title="Permanent link">&para;</a></h3>
+<p>Para equilibrar las preguntas de polaridad positiva y negativa, cada respuesta $R_i \in [1, 5]$ se transforma a una escala de contribución de 0 a 4:</p>
+<ol>
+<li><strong>Preguntas Impares (1, 3, 5, 7, 9 — Positivas):</strong>
+   $$\text{Aporte}_i = R_i - 1$$</li>
+<li><strong>Preguntas Pares (2, 4, 6, 8, 10 — Negativas):</strong>
+   $$\text{Aporte}_i = 5 - R_i$$</li>
+<li><strong>Puntaje SUS Individual:</strong>
+   Se calcula la sumatoria de los 10 aportes y se multiplica por el factor de escala $2.5$:
+   $$\text{Puntaje SUS} = \left( \sum_{i=1}^{10} \text{Aporte}_i \right) \times 2.5$$</li>
+</ol>
+<p>El puntaje resultante se ubica en el intervalo continuo de <strong>0 a 100 puntos</strong> (no representa un porcentaje directo, sino un puntaje percentil estandarizado).</p>
+<h3 id="62-escala-de-interpretacion-brooke-bangor-kortum-miller-2008">6.2 Escala de Interpretación (Brooke / Bangor, Kortum &amp; Miller 2008)<a class="headerlink" href="#62-escala-de-interpretacion-brooke-bangor-kortum-miller-2008" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>  0                    51              68              80.3           100
+  ├─────────────────────┼───────────────┼───────────────┼──────────────┤
+      Inaceptable (F)       Marginal (D)    Bueno (C/B)     Excelente (A)
+                                        ▲
+                               Promedio de la Industria (68.0)
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Rango de Puntaje</th>
+<th style="text-align: center;">Grado Escolar</th>
+<th style="text-align: center;">Adjetivo Calificativo</th>
+<th style="text-align: center;">Rango de Aceptabilidad</th>
+<th>Implicancia para Vigía</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>$\ge 85.0$</strong></td>
+<td style="text-align: center;"><strong>A+</strong></td>
+<td style="text-align: center;"><strong>Excelente</strong></td>
+<td style="text-align: center;">Aceptable</td>
+<td>Experiencia superior; los usuarios recomiendan activamente la plataforma.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>$80.0 - 84.9$</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: center;"><strong>Muy Bueno</strong></td>
+<td style="text-align: center;">Aceptable</td>
+<td>Alta usabilidad; flujos claros y sin fricciones relevantes.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>$68.0 - 79.9$</strong></td>
+<td style="text-align: center;"><strong>B / C</strong></td>
+<td style="text-align: center;"><strong>Bueno</strong></td>
+<td style="text-align: center;">Aceptable</td>
+<td>Supera el promedio global de la industria (68.0); usabilidad satisfactoria.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>$51.0 - 67.9$</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: center;"><strong>Marginal</strong></td>
+<td style="text-align: center;">Marginal</td>
+<td>Requiere optimización en flujos complejos o interfaces sobrecargadas.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>$&lt; 51.0$</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: center;"><strong>Inaceptable</strong></td>
+<td style="text-align: center;">No aceptable</td>
+<td>Problemas críticos de usabilidad que bloquean la adopción de la herramienta.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-automatizacion-del-procesamiento-script-sus_calcpy">7. Automatización del Procesamiento: Script <code>sus_calc.py</code><a class="headerlink" href="#7-automatizacion-del-procesamiento-script-sus_calcpy" title="Permanent link">&para;</a></h2>
+<p>Para evitar errores humanos de cálculo y agilizar la tabulación de Google Forms, se desarrolló el script ejecutable:
+<code>portal-integrador/scripts/sus_calc.py</code></p>
+<h3 id="modo-de-uso">Modo de Uso:<a class="headerlink" href="#modo-de-uso" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>portal-integrador
+
+<span class="c1"># Procesar archivo CSV descargado de Google Forms:</span>
+python<span class="w"> </span>scripts/sus_calc.py<span class="w"> </span>respuestas_formulario.csv
+
+<span class="c1"># Ejecutar cálculo de demostración con la muestra base de 5 participantes:</span>
+python<span class="w"> </span>scripts/sus_calc.py<span class="w"> </span>--demo
+</code></pre></div>
+<p>El script valida automáticamente que las respuestas se ubiquen en el rango $[1, 5]$, calcula la media muestral, desviación estándar ($\sigma$), mediana, puntaje mínimo/máximo y genera directamente las tablas Markdown para su incorporación en este informe.</p>
+<hr />
+<h2 id="8-resultados-de-la-sesion-uat-17112026">8. Resultados de la Sesión UAT (17/11/2026)<a class="headerlink" href="#8-resultados-de-la-sesion-uat-17112026" title="Permanent link">&para;</a></h2>
+<h3 id="81-ejecucion-de-tareas-por-participante">8.1 Ejecución de Tareas por Participante<a class="headerlink" href="#81-ejecucion-de-tareas-por-participante" title="Permanent link">&para;</a></h3>
+<p>Los participantes siguieron una guía escrita con el paso a paso de cada tarea (menú, botón y dato de cada campo). El facilitador midió el <strong>tiempo total</strong> de las 7 tareas por participante; no se cronometró cada tarea por separado.</p>
+<table>
+<thead>
+<tr>
+<th>Participante</th>
+<th style="text-align: center;">Tiempo total (min)</th>
+<th style="text-align: center;">Tareas completadas</th>
+<th style="text-align: center;">Bloqueos (tareas no completadas)</th>
+<th style="text-align: center;">Dentro del tiempo objetivo (13 min)</th>
+<th style="text-align: center;">Dentro del tiempo máximo (24 min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 — DSD</strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">7 / 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr>
+<td><strong>P2 — PQC</strong></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">7 / 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr>
+<td><strong>P3 — MJCC</strong></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">7 / 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr>
+<td><strong>P4 — AAZ</strong></td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">7 / 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr>
+<td><strong>P5 — ACER</strong></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">7 / 7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: center;">Sí</td>
+</tr>
+<tr>
+<td><strong>Total / Promedio</strong></td>
+<td style="text-align: center;"><strong>10.6 (promedio)</strong></td>
+<td style="text-align: center;"><strong>35 / 35 (100 %)</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>4 de 5</strong></td>
+<td style="text-align: center;"><strong>5 de 5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El tiempo objetivo y el máximo de la sesión son la suma de los de cada tarea (sección 4): 13 min y 24 min.</p>
+<p><strong>Dificultad percibida por tarea</strong> (respuesta de cada participante en el formulario):</p>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th style="text-align: center;">Sin dificultad</th>
+<th style="text-align: center;">Con alguna dificultad</th>
+<th style="text-align: center;">No la pudo completar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1. Iniciar sesión y elegir el proyecto</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T2. Crear la historia con criterios</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T3. Crear el caso MANUAL con pasos</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T4. Vincular el caso a la historia</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T5. Crear la suite e iniciar la corrida</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T6. Marcar FALLIDO con comentario (RN19)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td>T7. Finalizar, revisar ticket y trazabilidad</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td><strong>Total (35 respuestas)</strong></td>
+<td style="text-align: center;"><strong>20 (57 %)</strong></td>
+<td style="text-align: center;"><strong>15 (43 %)</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado funcional:</strong> las 7 tareas se completaron en los 5 casos (100 %). La regla RN19 bloqueó el guardado sin comentario y, al finalizar cada corrida, Vigía creó el ticket de defecto y la matriz de trazabilidad mostró la historia «Con fallos».</p>
+<hr />
+<h3 id="82-resultados-del-cuestionario-sus">8.2 Resultados del Cuestionario SUS<a class="headerlink" href="#82-resultados-del-cuestionario-sus" title="Permanent link">&para;</a></h3>
+<p>Calculados con <code>portal-integrador/scripts/sus_calc.py</code> sobre el CSV exportado de Google Forms.</p>
+<table>
+<thead>
+<tr>
+<th>Participante</th>
+<th style="text-align: center;">P1</th>
+<th style="text-align: center;">P2</th>
+<th style="text-align: center;">P3</th>
+<th style="text-align: center;">P4</th>
+<th style="text-align: center;">P5</th>
+<th style="text-align: center;">P6</th>
+<th style="text-align: center;">P7</th>
+<th style="text-align: center;">P8</th>
+<th style="text-align: center;">P9</th>
+<th style="text-align: center;">P10</th>
+<th style="text-align: center;">Puntaje SUS</th>
+<th style="text-align: center;">Grado</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P1 — DSD</strong></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>45.0</strong></td>
+<td style="text-align: center;">F</td>
+<td>Inaceptable</td>
+</tr>
+<tr>
+<td><strong>P2 — PQC</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><strong>52.5</strong></td>
+<td style="text-align: center;">D</td>
+<td>Marginal</td>
+</tr>
+<tr>
+<td><strong>P3 — MJCC</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><strong>55.0</strong></td>
+<td style="text-align: center;">D</td>
+<td>Marginal</td>
+</tr>
+<tr>
+<td><strong>P4 — AAZ</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>92.5</strong></td>
+<td style="text-align: center;">A+</td>
+<td>Excelente</td>
+</tr>
+<tr>
+<td><strong>P5 — ACER</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>47.5</strong></td>
+<td style="text-align: center;">F</td>
+<td>Inaceptable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metricas-estadisticas-consolidadas">Métricas Estadísticas Consolidadas<a class="headerlink" href="#metricas-estadisticas-consolidadas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica de Usabilidad</th>
+<th>Valor Obtenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total de Participantes Evaluados</strong></td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Puntaje Promedio General (SUS Score)</strong></td>
+<td><strong>58.5 / 100</strong></td>
+</tr>
+<tr>
+<td><strong>Desviación Estándar ($\sigma$, muestral)</strong></td>
+<td>±19.41</td>
+</tr>
+<tr>
+<td><strong>Puntaje Mínimo</strong></td>
+<td>45.0</td>
+</tr>
+<tr>
+<td><strong>Mediana</strong></td>
+<td>52.5</td>
+</tr>
+<tr>
+<td><strong>Puntaje Máximo</strong></td>
+<td>92.5</td>
+</tr>
+<tr>
+<td><strong>Grado de Usabilidad Global</strong></td>
+<td><strong>D</strong></td>
+</tr>
+<tr>
+<td><strong>Nivel de Aceptabilidad</strong></td>
+<td><strong>Marginal</strong></td>
+</tr>
+<tr>
+<td><strong>Comparativa vs. Promedio de la Industria</strong></td>
+<td><strong>−9.5 puntos</strong> por debajo de la referencia (68.0)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado: SUS = 58.5 (Marginal), por debajo del promedio de la industria (68).</strong></p>
+<hr />
+<h2 id="9-hallazgos-cualitativos-y-recomendaciones-de-mejora">9. Hallazgos Cualitativos y Recomendaciones de Mejora<a class="headerlink" href="#9-hallazgos-cualitativos-y-recomendaciones-de-mejora" title="Permanent link">&para;</a></h2>
+<h3 id="91-lo-que-destacaron-los-participantes">9.1 Lo que destacaron los participantes<a class="headerlink" href="#91-lo-que-destacaron-los-participantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Navegación ordenada:</strong> «el menú de la izquierda está ordenado y es fácil encontrar cada sección» (P2); «todo está ordenado y puedes ubicar los paneles rápido» (P3).</li>
+<li><strong>Ticket automático:</strong> P2 valoró que el ticket se cree solo cuando un caso falla.</li>
+<li><strong>Trazabilidad:</strong> P4 destacó poder vincular los casos con las historias y ver el resultado.</li>
+<li><strong>Apariencia:</strong> «una página muy moderna» (P5); «muy interactivo e interesante» (P1).</li>
+</ul>
+<h3 id="92-problemas-encontrados">9.2 Problemas encontrados<a class="headerlink" href="#92-problemas-encontrados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>Hallazgo</th>
+<th>Evidencia</th>
+<th>Mejora propuesta</th>
+<th style="text-align: center;">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">H1</td>
+<td>En los pasos del caso de prueba, el cuadro del medio («Datos (opcional)») no tiene título visible y se confunde con el resultado esperado.</td>
+<td>P2 puso el resultado esperado en el cuadro equivocado. T3 fue una de las dos tareas con más dificultad (3 de 5).</td>
+<td>Agregar encabezados visibles a las columnas de pasos: «Acción», «Datos (opcional)» y «Resultado esperado».</td>
+<td style="text-align: center;">Alta</td>
+</tr>
+<tr>
+<td style="text-align: center;">H2</td>
+<td>Falta orientación inicial: los usuarios nuevos no saben qué es cada módulo ni el orden del flujo.</td>
+<td>«Siento que es amplia la página y me pierdo» (P5); P1 sugiere una guía. P1 y P5 tienen los puntajes SUS más bajos (45.0 y 47.5).</td>
+<td>Un recorrido guiado en el primer ingreso y una página de Ayuda con el flujo historia → caso → suite → corrida → ticket.</td>
+<td style="text-align: center;">Alta</td>
+</tr>
+<tr>
+<td style="text-align: center;">H3</td>
+<td>El número de defectos aparece en varios lugares y no es claro dónde se cuenta.</td>
+<td>«Corroborar el conteo del defecto, ya que lo encontré en otro apartado» (P4). T7 tuvo dificultad en 3 de 5.</td>
+<td>En la matriz de trazabilidad, enlazar el número de defectos con los tickets correspondientes.</td>
+<td style="text-align: center;">Media</td>
+</tr>
+<tr>
+<td style="text-align: center;">H4</td>
+<td>Crear la suite y la corrida requiere pasar por dos módulos distintos.</td>
+<td>T5 tuvo dificultad en 3 de 5.</td>
+<td>Permitir iniciar una corrida desde la tarjeta de la suite, con un botón «Nueva corrida manual».</td>
+<td style="text-align: center;">Media</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-conclusiones-y-limitaciones">10. Conclusiones y Limitaciones<a class="headerlink" href="#10-conclusiones-y-limitaciones" title="Permanent link">&para;</a></h2>
+<h3 id="101-conclusiones">10.1 Conclusiones<a class="headerlink" href="#101-conclusiones" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Aceptación funcional: cumplida.</strong> Los 5 participantes completaron las 7 tareas (35 de 35), sin bloqueos, con un tiempo promedio de 10.6 min (objetivo de 13 min; 4 de 5 dentro del objetivo). Las reglas de negocio validadas en interfaz (RN19, ticket automático y trazabilidad) funcionaron en todos los casos.</li>
+<li><strong>Usabilidad percibida: marginal.</strong> El SUS promedio fue <strong>58.5</strong>, por debajo de la referencia de 68. Los comentarios apuntan a la falta de orientación inicial (H2) y a detalles de la interfaz de pasos (H1), más que a errores funcionales.</li>
+<li><strong>Plan:</strong> implementar H1 y H2 y repetir la evaluación SUS con una muestra mayor y perfiles variados, con meta de <strong>SUS ≥ 68</strong>.</li>
+</ol>
+<h3 id="102-limitaciones-y-amenazas-a-la-validez">10.2 Limitaciones y amenazas a la validez<a class="headerlink" href="#102-limitaciones-y-amenazas-a-la-validez" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Muestra pequeña y homogénea:</strong> 5 estudiantes, sin perfiles de QA, desarrollo ni Product Owner. La dispersión es alta (σ = 19.4; de 45.0 a 92.5), así que el promedio es poco preciso.</li>
+<li><strong>Guía detallada:</strong> los participantes siguieron instrucciones con el paso a paso, por eso el tiempo y la tasa de éxito miden la ejecución del flujo más que la facilidad para descubrirlo sin ayuda.</li>
+<li><strong>Posible lectura errónea de los ítems negativos:</strong> P1 y P2 marcaron casi el mismo valor en las 10 preguntas, incluidas las de redacción negativa (P2 marcó 5 en «innecesariamente complejo», «demasiada inconsistencia» y «muy engorroso»), lo que contradice sus comentarios positivos y su baja dificultad percibida. Es un sesgo conocido del SUS por la alternancia de ítems positivos y negativos. Los puntajes se reportan sin ajustar.</li>
+<li><strong>Tiempos:</strong> se midió el tiempo total de la sesión, no el de cada tarea.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

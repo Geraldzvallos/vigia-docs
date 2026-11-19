@@ -1,0 +1,1844 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plataforma de gestión de pruebas de software — SI-784 Calidad y Pruebas de Software (UPT/EPIS)">
+      
+      
+      
+      
+        <link rel="prev" href="../../documentos/08-documentacion-automatica/">
+      
+      
+        <link rel="next" href="../core/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Referencia: app.api - Vigía · Documentación técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#referencia-appapi" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-header__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vigía · Documentación técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Referencia: app.api
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-nav__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vigía · Documentación técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-estado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estado del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20-diccionario-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../30-diagrama-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrama entidad-relación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40-diagramas-clases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../45-componentes-despliegue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de componentes y de despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de endpoints de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/01-titulo-problema-objetivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía — Título, problema y objetivos (Unidad II · Semana 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/02-backlog-historias-invest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/03-plan-de-pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan de pruebas de Vigía (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/04-modelo-de-datos-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de datos v2 (propuesta para revisar)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/05-reporte-cobertura-mutacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte de Cobertura de Código y Pruebas de Mutación (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/06-bdd-gherkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificación y Pruebas BDD con Gherkin en Español (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/07-uat-sus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentos/08-documentacion-automatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación automática: README y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appapiadmin_usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.admin_usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiallowed_hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.allowed_hosts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiaudit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiauth_google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.auth_google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiauth_sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.auth_sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.ci
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiconnections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiexecutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.executions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapihistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiintegrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiinvitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.invitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapijunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.junit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapimetrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapinotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiprojects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapirepositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiruns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapistories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.stories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapisuites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.suites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapitest_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapitickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.users
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appapiadmin_usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.admin_usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiallowed_hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.allowed_hosts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiaudit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiauth_google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.auth_google
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiauth_sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.auth_sessions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.ci
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiconnections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiexecutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.executions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapihistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.history
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiintegrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiinvitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.invitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapijunit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.junit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapimetrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapinotifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiprojects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapirepositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiruns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapistories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.stories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapisuites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.suites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapitest_cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.test_cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapitickets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.tickets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appapiusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.api.users
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="referencia-appapi">Referencia: <code>app.api</code><a class="headerlink" href="#referencia-appapi" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Detalle de cada clase con sus atributos, propiedades y métodos, generado desde el código y sus docstrings.</p>
+</blockquote>
+<h2 id="appapiadmin_usage"><code>app.api.admin_usage</code><a class="headerlink" href="#appapiadmin_usage" title="Permanent link">&para;</a></h2>
+<p>Endpoints de administración para telemetría y uso del producto Vigía. Permite consultar indicadores de actividad (DAU/WAU/MAU, adopción por módulo, tasas de error, distribuciones y latencias p50/p95). Acceso exclusivo para administradores globales (ADMIN).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_usage_dashboard(desde: str=Query(..., description='Fecha inicial en formato YYYY-MM-DD'), hasta: str=Query(..., description='Fecha final en formato YYYY-MM-DD'), current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Retorna el dashboard analítico de utilización de Vigía. Valida que el rango de consulta no sea posterior ni exceda los 180 días. Solo accesible para el rol ADMIN global.</li>
+</ul>
+<h2 id="appapiallowed_hosts"><code>app.api.allowed_hosts</code><a class="headerlink" href="#appapiallowed_hosts" title="Permanent link">&para;</a></h2>
+<p>Dominios permitidos para los casos API de un proyecto (RN18, anti-SSRF). Ver: cualquier miembro del proyecto. Agregar y quitar: OWNER (o ADMIN global).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_allowed_hosts(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>add_allowed_host(project_id: int, payload: schemas.AllowedHostCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>delete_allowed_host(project_id: int, host_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapiaudit"><code>app.api.audit</code><a class="headerlink" href="#appapiaudit" title="Permanent link">&para;</a></h2>
+<p>Endpoints de consulta de la bitácora inmutable de auditoría (Historial / Auditoría). Gobernanza RBAC: - ADMIN: acceso total a toda la bitácora del sistema y filtros globales. - OWNER: acceso restringido únicamente a los eventos de los proyectos donde es OWNER. - Demás roles (QA, DEV, DBA, USER): 403 Forbidden. - Anónimo: 401 Unauthorized. - Inmutabilidad estricta: Métodos PUT, PATCH y DELETE responden 405 Method Not Allowed.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_audit_logs(start_date: Optional[datetime]=Query(None, description='Fecha de inicio (ISO-8601)'), end_date: Optional[datetime]=Query(None, description='Fecha de fin (ISO-8601)'), action: Optional[str]=Query(None, description='Filtrar por acción'), actor_user_id: Optional[int]=Query(None, description='Filtrar por ID del usuario actor'), user_id: Optional[int]=Query(None, description='Alias para actor_user_id'), project_id: Optional[int]=Query(None, description='Filtrar por proyecto'), page: int=Query(1, ge=1, description='Número de página'), page_size: int=Query(20, ge=1, le=100, description='Tamaño de página'), current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Consulta paginada con filtros de la bitácora de auditoría. ADMIN ve todo el sistema. OWNER ve únicamente eventos de proyectos donde es OWNER. Demás roles reciben 403 Forbidden.</li>
+<li><code>audit_immutable_protection(request: Request)</code></li>
+</ul>
+<h2 id="appapiauth_google"><code>app.api.auth_google</code><a class="headerlink" href="#appapiauth_google" title="Permanent link">&para;</a></h2>
+<p>Endpoints de autenticación federada con Google OpenID Connect (Fase B). Provee /api/auth/google/login y /api/auth/google/callback.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>google_login(request: Request)</code>: Inicia el flujo de autenticación OpenID Connect con Google. Genera state y nonce criptográficos, los almacena en una cookie firmada y redirige a la pantalla de consentimiento de Google.</li>
+<li><code>google_callback(request: Request, state: Optional[str]=None, code: Optional[str]=None, error: Optional[str]=None, db: Session=Depends(get_db))</code>: Procesa el callback de Google tras el consentimiento del usuario. Valida state y nonce, verifica el ID Token, autentica o registra al usuario y emite la sesión JWT correspondiente.</li>
+</ul>
+<h2 id="appapiauth_sessions"><code>app.api.auth_sessions</code><a class="headerlink" href="#appapiauth_sessions" title="Permanent link">&para;</a></h2>
+<p>Endpoints para la gestión de sesiones activas del usuario (RNF04). Permite listar sesiones (marcando la actual), revocar una sesión específica o revocar todas las demás. Los tokens de CI (vgi_) NO se ven afectados por este módulo.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_my_sessions(request: Request, current_user: User=Depends(get_current_user), db: Session=Depends(get_db)) -&gt; List[Dict[str, Any]]</code>: Retorna la lista de sesiones activas del usuario actual, marcando cuál es la actual.</li>
+<li><code>revoke_my_session(session_id: int, request: Request, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Revoca una sesión específica del usuario. Si no existe o no le pertenece, responde 404.</li>
+<li><code>revoke_other_sessions_endpoint(request: Request, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Cierra todas las demás sesiones activas del usuario, conservando únicamente la actual.</li>
+</ul>
+<h2 id="appapici"><code>app.api.ci</code><a class="headerlink" href="#appapici" title="Permanent link">&para;</a></h2>
+<p>Endpoints de Integración CI/CD (Fase 4). Permite disparar ejecuciones de suites de prueba mediante tokens de CI por proyecto y consultar el historial de ejecuciones de pipelines (CiRun).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>trigger_ci_run(payload: schemas.CiTriggerRequest, req: Request, db: Session=Depends(get_db))</code>: Dispara la ejecución automatizada de una Suite mediante Token de CI por proyecto. Solo accesible mediante autenticación de token de proyecto (vgi_...). Verifica que la suite y el perfil pertenezcan estrictamente al proyecto del token.</li>
+<li><code>list_ci_runs(req: Request, project_id: Optional[int]=Query(None), branch: Optional[str]=Query(None), status_filter: Optional[str]=Query(None, alias='status'), skip: int=Query(0, ge=0), limit: int=Query(50, ge=1, le=100), auth_user=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Lista las ejecuciones de pipelines (CiRun) paginadas y filtrables. Accesible para miembros con sesión del proyecto y para tokens de CI del proyecto.</li>
+<li><code>get_ci_run_detail(run_id: int, req: Request, auth_user=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene el detalle de un CiRun junto a sus ejecuciones históricas asociadas. Accesible para miembros del proyecto o para el token de CI del proyecto.</li>
+</ul>
+<h2 id="appapiconnections"><code>app.api.connections</code><a class="headerlink" href="#appapiconnections" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para la gestión de Perfiles de Conexión Oracle (sin persistencia de contraseñas). Fase A - Aislamiento por proyecto, roles (DBA, OWNER, ADMIN), protección SSRF y perfiles demo.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>create_connection_profile(profile: schemas.ConnectionProfileCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea un nuevo perfil de conexión Oracle para un proyecto. Permitido únicamente a DBA u OWNER del proyecto, o ADMIN global. Valida contra destinos de red privada o restringidos (SSRF).</li>
+<li><code>get_connection_profiles(project_id: Optional[int]=Query(None), skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene la lista de perfiles de conexión filtrados opcionalmente por proyecto. Si el usuario no es miembro del proyecto especificado, responde 404 (aislamiento).</li>
+<li><code>get_connection_profile(connection_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene un perfil de conexión por su ID. Si el usuario no es miembro del proyecto al que pertenece la conexión, responde 404.</li>
+<li><code>update_connection_profile(connection_id: int, profile_data: schemas.ConnectionProfileUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Actualiza la información de un perfil de conexión. Permitido a DBA u OWNER del proyecto, o ADMIN global. Los perfiles is_demo no pueden modificarse.</li>
+<li><code>delete_connection_profile(connection_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Elimina un perfil de conexión. Permitido a DBA u OWNER del proyecto, o ADMIN global.</li>
+<li><code>test_connection_profile(connection_id: int, request: schemas.TestConnectionRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Prueba la conectividad de un perfil Oracle. Permitido a DBA u OWNER del proyecto, o ADMIN global. Si el perfil es de demostración (is_demo=True), inyecta automáticamente DEMO_ORACLE_PASSWORD.</li>
+</ul>
+<h2 id="appapiexecutions"><code>app.api.executions</code><a class="headerlink" href="#appapiexecutions" title="Permanent link">&para;</a></h2>
+<p>Router de Ejecución de Pruebas (SQL y API) desacoplado utilizando el Servicio Centralizado de Ejecución. Fase A - Aislamiento por proyecto, roles (QA, OWNER, ADMIN o CI), rate limiting y perfiles demo.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>apply_execution_rate_limit(req: Request, user=None)</code>: Aplica rate limiting sobre endpoints de ejecución por usuario o por IP.</li>
+<li><code>execute_target_sql(request: schemas.ExecutionRequest, req: Request, auth_user=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Ejecuta una sentencia SQL aislada aplicando las políticas de seguridad del ambiente.</li>
+<li><code>run_test_case(test_case_id: int, db_credentials: schemas.TestCaseExecutionRequest, req: Request, current_user=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Orquestador Principal: Recupera un caso de prueba guardado y lo ejecuta utilizando el servicio centralizado de ejecución. Regla: Solo se ejecutan casos en estado 'APROBADO'. Permitido a QA, OWNER en el proyecto, ADMIN global o CI API Key.</li>
+<li><code>run_test_suite(suite_id: int, db_credentials: schemas.SuiteExecutionRequest, req: Request, current_user=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Ejecuta en ráfaga todos los casos de prueba de una Suite utilizando una conexión única. Regla: Solo los casos APROBADO se ejecutan en suites y en CI; los demás se reportan como omitidos en el resumen. Permitido a QA, OWNER en el proyecto, ADMIN global o CI API Key.</li>
+</ul>
+<h2 id="appapihistory"><code>app.api.history</code><a class="headerlink" href="#appapihistory" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para la consulta del Historial de Ejecuciones. Fase A - Aislamiento estricto por proyecto (404 si el usuario no es miembro).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_history(project_id: Optional[int]=Query(None), test_case_id: Optional[int]=Query(None), suite_id: Optional[int]=Query(None), status: Optional[str]=Query(None), skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene el historial de ejecuciones guardadas admitiendo paginación y filtros opcionales por project_id, test_case_id, suite_id y status. Aislado por pertenencia a proyectos.</li>
+<li><code>get_history_detail(history_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene los detalles de un registro de historial específico. Si el usuario no es miembro del proyecto de la ejecución, responde 404.</li>
+</ul>
+<h2 id="appapiintegrations"><code>app.api.integrations</code><a class="headerlink" href="#appapiintegrations" title="Permanent link">&para;</a></h2>
+<p>Integraciones del proyecto: GitHub Issues, Discord y Slack. - Ver la configuración (sin secretos): cualquier miembro. - Guardar, borrar y probar: OWNER (o ADMIN global). - Crear un issue en GitHub desde un ticket: OWNER, QA o DEV.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_integrations(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>save_integration(project_id: int, kind: schemas.IntegrationKindEnum, payload: schemas.IntegrationConfigIn, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>delete_integration(project_id: int, kind: schemas.IntegrationKindEnum, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>test_integration(project_id: int, kind: schemas.IntegrationKindEnum, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>create_github_issue(ticket_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapiinvitations"><code>app.api.invitations</code><a class="headerlink" href="#appapiinvitations" title="Permanent link">&para;</a></h2>
+<p>Endpoints para la gestión de Invitaciones a proyectos. Fase C - Flujo de invitación con consentimiento y aceptación.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_my_pending_invitations(current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Retorna la lista de invitaciones pendientes para el usuario en sesión. Incluye nombre del proyecto, rol y quién invitó.</li>
+<li><code>accept_invitation(invitation_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Acepta una invitación pendiente y crea la membresía correspondiente. Solo el invitado puede aceptar (cualquier otro recibe 404). Si ya no está pendiente, responde 409.</li>
+<li><code>decline_invitation(invitation_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Rechaza una invitación pendiente. Solo el invitado puede rechazar (cualquier otro recibe 404). Si ya no está pendiente, responde 409.</li>
+</ul>
+<h2 id="appapijunit"><code>app.api.junit</code><a class="headerlink" href="#appapijunit" title="Permanent link">&para;</a></h2>
+<p>Importación de reportes JUnit XML como corridas de prueba (origen JUNIT).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>import_junit(project_id: int, payload: schemas.JunitImportRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>import_junit_ci(req: Request, name: Optional[str]=Query(None, max_length=200), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapimetrics"><code>app.api.metrics</code><a class="headerlink" href="#appapimetrics" title="Permanent link">&para;</a></h2>
+<p>Métricas de calidad del proyecto: casos, cobertura de requisitos, corridas y defectos. Ver: cualquier miembro del proyecto. Optimizado con caché en memoria con TTL de 60 s (RNF06, variable METRICS_CACHE_SECONDS).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>project_metrics(project_id: int, runs: int=Query(10, ge=1, le=50), current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapinotifications"><code>app.api.notifications</code><a class="headerlink" href="#appapinotifications" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para el Centro de Notificaciones (Fase C).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_my_notifications(unread_only: bool=Query(False, description='Filtrar solo no leídas'), limit: int=Query(50, ge=1, le=100, description='Límite de resultados'), offset: int=Query(0, ge=0, description='Desplazamiento inicial'), current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Lista las notificaciones del usuario en sesión. Incluye el total y el conteo de no leídas (unread_count).</li>
+<li><code>get_my_unread_count(current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Retorna respuesta mínima con la cantidad de notificaciones no leídas. Utilizado para el sondeo periódico del frontend.</li>
+<li><code>mark_notification_read(notification_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Marca una notificación propia como leída. Si la notificación no pertenece al usuario -&gt; 404.</li>
+<li><code>mark_all_notifications_read(current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Marca todas las notificaciones pendientes del usuario como leídas.</li>
+</ul>
+<h2 id="appapiprojects"><code>app.api.projects</code><a class="headerlink" href="#appapiprojects" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para la gestión de Proyectos y Membresías (Fase A).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>create_project(project: schemas.ProjectCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea un nuevo proyecto en el espacio de trabajo. Cualquier usuario autenticado puede crear proyectos y queda asignado como OWNER. Límite configurable por MAX_PROJECTS_PER_USER (por defecto 5; ADMIN sin límite).</li>
+<li><code>get_projects(req: Request, skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene la lista de proyectos con paginación estricta. Filtra únicamente los proyectos donde el usuario es miembro activo (ADMIN ve todo; CI ve todo). Soporta validación de caché ETag y respuesta 304 Not Modified.</li>
+<li><code>get_project(project_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene los detalles de un proyecto por su ID. Si el usuario no es miembro, responde 404 para aislar la existencia del recurso.</li>
+<li><code>update_project(project_id: int, project_data: schemas.ProjectUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Actualiza la información de un proyecto existente. Permitido únicamente a usuarios con rol OWNER en el proyecto o ADMIN global.</li>
+<li><code>delete_project(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Elimina un proyecto si el usuario es OWNER o ADMIN y no tiene dependencias activas.</li>
+<li><code>get_project_members(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Lista todos los miembros del proyecto. Requiere ser miembro del proyecto o ADMIN global. Privacidad: el correo de los miembros solo debe verlo el OWNER del proyecto o un ADMIN; para el resto, la API debe devolver email = null.</li>
+<li><code>add_project_member(project_id: int, payload: schemas.ProjectMemberCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Invita a un usuario al proyecto por username o email. En Fase C, crea una invitación pendiente en vez de la membresía directa. Solo permitido a usuarios con rol OWNER en el proyecto o ADMIN global.</li>
+<li><code>get_project_invitations(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Lista las invitaciones pendientes del proyecto. Solo permitido para el OWNER del proyecto o ADMIN global.</li>
+<li><code>cancel_project_invitation(project_id: int, invitation_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Cancela una invitación pendiente del proyecto. Solo permitido para el OWNER del proyecto o ADMIN global.</li>
+<li><code>update_project_member(project_id: int, user_id: int, payload: schemas.ProjectMemberUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Cambia el rol de un miembro del proyecto. Solo permitido a usuarios con rol OWNER en el proyecto o ADMIN global. Protección: No se puede degradar al último OWNER.</li>
+<li><code>remove_project_member(project_id: int, user_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Quita un miembro del proyecto. Permitido a OWNER o ADMIN global, o al propio usuario si desea abandonar el proyecto. Protección: No se puede quitar ni salir siendo el último OWNER.</li>
+<li><code>create_project_ci_token(project_id: int, payload: schemas.ProjectCiTokenCreateRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea un nuevo token de CI para el proyecto. Solo permitido para el OWNER del proyecto o ADMIN global. Devuelve el token en texto plano UNA ÚNICA VEZ.</li>
+<li><code>get_project_ci_tokens(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Lista todos los tokens de CI del proyecto (sin exponer el secreto en claro). Solo permitido para el OWNER del proyecto o ADMIN global.</li>
+<li><code>revoke_ci_token(project_id: int, token_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Revoca un token de CI del proyecto. Solo permitido para el OWNER del proyecto o ADMIN global.</li>
+</ul>
+<h2 id="appapirepositories"><code>app.api.repositories</code><a class="headerlink" href="#appapirepositories" title="Permanent link">&para;</a></h2>
+<p>Endpoints RESTful para la administración de Repositorios Git (CI/CD). Fase A - Aislamiento por proyecto y roles (QA, OWNER, ADMIN).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>get_repositories(skip: int=Query(0, ge=0, description='Número de registros a omitir para paginación'), limit: int=Query(100, ge=1, le=100, description='Límite de repositorios a retornar (máximo 100)'), project_id: Optional[int]=Query(None, description='Filtrar repositorios por ID de proyecto'), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code></li>
+<li><code>get_repository(repository_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code></li>
+<li><code>create_repository(repository_in: RepositoryCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>update_repository(repository_id: int, repository_in: RepositoryUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>delete_repository(repository_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapiruns"><code>app.api.runs</code><a class="headerlink" href="#appapiruns" title="Permanent link">&para;</a></h2>
+<p>Corridas de prueba (test runs). - Iniciar, ejecutar automáticos y finalizar: OWNER o QA (igual que ejecutar suites). - Registrar resultados manuales: OWNER, QA o DEV. - Ver: cualquier miembro del proyecto.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>start_run(suite_id: int, payload: schemas.TestRunCreate, req: Request, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea la corrida con un resultado por caso y ejecuta los casos API (y SQL si llegan credenciales).</li>
+<li><code>execute_pending(run_id: int, payload: schemas.TestRunCreate, req: Request, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Ejecuta los casos automáticos que quedaron pendientes (por ejemplo, SQL sin conexión al iniciar).</li>
+<li><code>list_runs(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>get_run(run_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>record_manual_result(run_id: int, result_id: int, payload: schemas.ManualResultUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>finish_run(run_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Cierra la corrida, recalcula los totales, crea los tickets de los manuales fallidos y avisa por webhook.</li>
+</ul>
+<h2 id="appapistories"><code>app.api.stories</code><a class="headerlink" href="#appapistories" title="Permanent link">&para;</a></h2>
+<p>Historias de usuario, criterios de aceptación, vínculo con casos y matriz de trazabilidad. Ver: cualquier miembro del proyecto. Crear, editar, borrar y vincular: OWNER o QA (o ADMIN global).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>list_stories(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>create_story(project_id: int, payload: schemas.UserStoryCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>get_story(story_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>update_story(story_id: int, payload: schemas.UserStoryUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>delete_story(story_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>link_test_case(story_id: int, test_case_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>unlink_test_case(story_id: int, test_case_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code></li>
+<li><code>traceability(project_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Matriz historia → casos → último resultado → defectos abiertos.</li>
+</ul>
+<h2 id="appapisuites"><code>app.api.suites</code><a class="headerlink" href="#appapisuites" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para las Suites de Pruebas con control de acceso por roles de proyecto (Fase A).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>create_suite(suite: schemas.TestSuiteCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea una nueva Suite de Pruebas. Permitido para OWNER, QA y DEV del proyecto, o ADMIN.</li>
+<li><code>add_test_case_to_suite(suite_id: int, test_case_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Vincula un Caso de Prueba a una Suite de Pruebas. Validaciones estrictas: - 404 si la suite o el caso no existen o el usuario no es miembro del proyecto. - 409 si el caso ya pertenece a la suite. - 409 si el caso y la suite pertenecen a proyectos distintos.</li>
+<li><code>get_all_suites(project_id: Optional[int]=Query(None), skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene todas las suites registradas con paginación y filtro de proyecto accesible.</li>
+<li><code>get_suite_detail(suite_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene el detalle de una suite por su ID (aislado por proyecto: 404).</li>
+<li><code>update_suite(suite_id: int, suite_update: schemas.TestSuiteUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Actualiza nombre y descripción de una suite. Permitido para OWNER, QA y DEV.</li>
+<li><code>remove_test_case_from_suite(suite_id: int, test_case_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Retira un caso de una suite de forma controlada.</li>
+<li><code>delete_suite(suite_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Elimina una suite de prueba. Exclusivo para QA, OWNER y ADMIN.</li>
+</ul>
+<h2 id="appapitest_cases"><code>app.api.test_cases</code><a class="headerlink" href="#appapitest_cases" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para la gestión de Casos de Prueba (SQL, MANUAL y API) y ciclo de aprobación QA. Fase A - Aislamiento por proyecto y roles (DEV propone, QA/OWNER aprueba y elimina). Unidad II - Casos MANUAL (pasos) y API (petición HTTP con aserciones).</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>create_test_case(test_case: schemas.TestCaseCreate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Crea un nuevo caso de prueba asignado a un proyecto. Si el rol del usuario en el proyecto es DEV, el caso queda automáticamente en estado PROPUESTO.</li>
+<li><code>read_test_cases(req: Request, project_id: Optional[int]=Query(None), skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene la lista de casos de prueba guardados con paginación y filtro de proyecto. Si se especifica un proyecto al que no se tiene acceso, responde 404 (aislamiento). Soporta validación de caché ETag y respuesta 304 Not Modified.</li>
+<li><code>read_test_case(test_case_id: int, auth_user: Optional[User]=Depends(get_current_user_or_ci), db: Session=Depends(get_db))</code>: Obtiene un caso de prueba específico por su ID. Si el usuario no es miembro del proyecto del caso, responde 404.</li>
+<li><code>update_test_case(test_case_id: int, tc_update: schemas.TestCaseUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Actualiza la información de un caso de prueba. Si es editado por DEV, el estado vuelve/queda en PROPUESTO para revisión QA.</li>
+<li><code>update_test_case_status(test_case_id: int, status_in: schemas.TestCaseStatusUpdate, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Aprueba o rechaza un caso de prueba (PROPUESTO -&gt; APROBADO / RECHAZADO). Exclusivo para roles QA, OWNER y ADMIN global.</li>
+<li><code>delete_test_case(test_case_id: int, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Elimina un caso de prueba de la base de datos. Exclusivo para QA, OWNER y ADMIN.</li>
+</ul>
+<h2 id="appapitickets"><code>app.api.tickets</code><a class="headerlink" href="#appapitickets" title="Permanent link">&para;</a></h2>
+<p>Endpoints RESTful para la gestión de Tickets de Defecto (ITSM - Fase 3). Controlador desacoplado que delega toda la lógica de negocio a ticket_service.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>require_interactive_user(request: Request, user: User=Depends(get_current_user)) -&gt; User</code>: Garantiza que la API Key de CI no pueda interactuar con el módulo de tickets (403).</li>
+<li><code>get_tickets(req: Request, project_id: Optional[int]=Query(None, description='Filtrar por proyecto'), status_filter: Optional[str]=Query(None, alias='status', description='Filtrar por estado'), severity: Optional[str]=Query(None, description='Filtrar por severidad (ALTA, MEDIA)'), assigned_to: Optional[int]=Query(None, description='Filtrar por usuario asignado'), my_tickets: bool=Query(False, description='Filtrar exclusivamente tickets asignados al usuario autenticado'), offset: int=Query(0, ge=0, description='Desplazamiento de paginación'), skip: Optional[int]=Query(None, ge=0, description='Alias de offset'), limit: int=Query(50, ge=1, le=100, description='Límite por página'), current_user: User=Depends(require_interactive_user), db: Session=Depends(get_db))</code></li>
+<li><code>get_ticket(ticket_id: int, current_user: User=Depends(require_interactive_user), db: Session=Depends(get_db))</code></li>
+<li><code>transition_ticket(ticket_id: int, req: TicketTransitionRequest, current_user: User=Depends(require_interactive_user), db: Session=Depends(get_db))</code></li>
+<li><code>assign_ticket_endpoint(ticket_id: int, req: TicketAssignRequest, current_user: User=Depends(require_interactive_user), db: Session=Depends(get_db))</code></li>
+<li><code>add_comment_endpoint(ticket_id: int, req: TicketCommentRequest, current_user: User=Depends(require_interactive_user), db: Session=Depends(get_db))</code></li>
+</ul>
+<h2 id="appapiusers"><code>app.api.users</code><a class="headerlink" href="#appapiusers" title="Permanent link">&para;</a></h2>
+<p>Endpoints REST para la gestión de Usuarios y Roles (CRUD), control de acceso y endpoints de perfil /api/me. Fase A - Plataforma multiusuario con revocación de tokens y gestión de cuenta propia.</p>
+<p><strong>Funciones</strong></p>
+<ul>
+<li><code>build_user_profile_response(db: Session, user: User) -&gt; schemas.UserProfileResponse</code>: Construye la respuesta enriquecida de perfil con la lista de proyectos y roles del usuario.</li>
+<li><code>get_me(current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Obtiene los datos del usuario autenticado actual y sus proyectos con roles.</li>
+<li><code>update_my_profile(body: schemas.UserUpdateProfileRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Actualiza el nombre completo del usuario autenticado actual.</li>
+<li><code>change_my_password(body: schemas.UserPasswordChangeRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Cambia la contraseña del usuario autenticado. Exige la contraseña actual (salvo que sea un usuario registrado con Google sin contraseña local), valida la nueva según la política y revoca sesiones previas (incrementa token_version).</li>
+<li><code>delete_my_account(body: schemas.DeleteAccountRequest, current_user: User=Depends(get_current_user), db: Session=Depends(get_db))</code>: Elimina la cuenta del usuario autenticado tras confirmar su nombre de usuario. Anonimiza la evidencia histórica y limpia proyectos personales.</li>
+<li><code>list_users(skip: int=Query(0, ge=0), limit: int=Query(100, ge=1, le=100), current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Lista todos los usuarios del sistema. Exclusivo para administradores.</li>
+<li><code>create_user(user_data: schemas.UserCreate, current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Crea un nuevo usuario en la plataforma. Exclusivo para administradores.</li>
+<li><code>get_user_detail(user_id: int, current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Obtiene los detalles de un usuario específico por su ID.</li>
+<li><code>update_user(user_id: int, user_data: schemas.UserUpdate, current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Actualiza datos, rol o estado de un usuario con protecciones para el último ADMIN.</li>
+<li><code>delete_user(user_id: int, current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Elimina un usuario con protecciones contra autoeliminación y último administrador.</li>
+<li><code>reset_password(user_id: int, body: schemas.UserResetPassword, current_user: User=Depends(require_roles(UserRole.ADMIN.value)), db: Session=Depends(get_db))</code>: Restablece la contraseña de un usuario y revoca sus sesiones previas. Exclusivo para administradores.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

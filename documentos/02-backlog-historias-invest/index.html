@@ -1,0 +1,1824 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plataforma de gestión de pruebas de software — SI-784 Calidad y Pruebas de Software (UPT/EPIS)">
+      
+      
+      
+      
+        <link rel="prev" href="../01-titulo-problema-objetivos/">
+      
+      
+        <link rel="next" href="../03-plan-de-pruebas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Backlog Unidad II — historias de usuario (INVEST) - Vigía · Documentación técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#backlog-unidad-ii-historias-de-usuario-invest" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-header__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vigía · Documentación técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Backlog Unidad II — historias de usuario (INVEST)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vigía · Documentación técnica" class="md-nav__button md-logo" aria-label="Vigía · Documentación técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vigía · Documentación técnica
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-calidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de calidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-estado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estado del proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20-diccionario-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diccionario de datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../30-diagrama-er/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagrama entidad-relación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40-diagramas-clases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../45-componentes-despliegue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas de componentes y de despliegue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de endpoints de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-titulo-problema-objetivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vigía — Título, problema y objetivos (Unidad II · Semana 1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog Unidad II — historias de usuario (INVEST)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detalle-y-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle y criterios de aceptación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalle y criterios de aceptación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hu-01-registrar-una-historia-de-usuario-con-su-descripcion-y-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-01 — Registrar una historia de usuario con su descripción y criterios de aceptación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-02-vincular-un-caso-de-prueba-existente-a-una-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-02 — Vincular un caso de prueba existente a una historia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-03-crear-un-caso-de-prueba-manual-con-pasos-datos-de-entrada-y-resultado-esperado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-03 — Crear un caso de prueba MANUAL con pasos, datos de entrada y resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-04-crear-un-caso-de-prueba-de-api-con-metodo-url-cuerpo-y-aserciones-de-codigo-de-estado-y-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-04 — Crear un caso de prueba de API con método, URL, cuerpo y aserciones de código de estado y JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-05-seguir-usando-los-casos-sql-existentes-como-validacion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-05 — Seguir usando los casos SQL existentes como «validación de datos»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-06-iniciar-una-corrida-de-prueba-sobre-una-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-06 — Iniciar una corrida de prueba sobre una suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-07-que-se-cree-un-ticket-de-defecto-al-fallar-un-caso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-07 — Que se cree un ticket de defecto al fallar un caso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-08-ver-la-matriz-de-trazabilidad-historia-caso-ultima-ejecucion-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-08 — Ver la matriz de trazabilidad historia → caso → última ejecución → defecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-09-ver-un-dashboard-con-la-tasa-de-aprobacion-defectos-por-severidad-y-mttr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-09 — Ver un dashboard con la tasa de aprobación, defectos por severidad y MTTR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-10-exportar-el-informe-de-una-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-10 — Exportar el informe de una corrida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-11-subir-el-junit-xml-de-mi-pipeline-a-vigia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-11 — Subir el JUnit XML de mi pipeline a Vigía
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-12-crear-un-github-issue-desde-un-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-12 — Crear un GitHub Issue desde un ticket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-13-recibir-una-notificacion-en-discord-o-slack-cuando-una-corrida-falla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-13 — Recibir una notificación en Discord o Slack cuando una corrida falla
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tareas-tecnicas-calidad-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tareas técnicas (calidad del producto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-hecho-dod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definición de Hecho (DoD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-plan-de-pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan de pruebas de Vigía (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-modelo-de-datos-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de datos v2 (propuesta para revisar)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-reporte-cobertura-mutacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte de Cobertura de Código y Pruebas de Mutación (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-bdd-gherkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificación y Pruebas BDD con Gherkin en Español (Unidad II)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-uat-sus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan y Reporte de Pruebas de Aceptación del Usuario (UAT) con Evaluación SUS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-documentacion-automatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación automática: README y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia: app.services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detalle-y-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle y criterios de aceptación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detalle y criterios de aceptación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hu-01-registrar-una-historia-de-usuario-con-su-descripcion-y-criterios-de-aceptacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-01 — Registrar una historia de usuario con su descripción y criterios de aceptación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-02-vincular-un-caso-de-prueba-existente-a-una-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-02 — Vincular un caso de prueba existente a una historia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-03-crear-un-caso-de-prueba-manual-con-pasos-datos-de-entrada-y-resultado-esperado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-03 — Crear un caso de prueba MANUAL con pasos, datos de entrada y resultado esperado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-04-crear-un-caso-de-prueba-de-api-con-metodo-url-cuerpo-y-aserciones-de-codigo-de-estado-y-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-04 — Crear un caso de prueba de API con método, URL, cuerpo y aserciones de código de estado y JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-05-seguir-usando-los-casos-sql-existentes-como-validacion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-05 — Seguir usando los casos SQL existentes como «validación de datos»
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-06-iniciar-una-corrida-de-prueba-sobre-una-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-06 — Iniciar una corrida de prueba sobre una suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-07-que-se-cree-un-ticket-de-defecto-al-fallar-un-caso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-07 — Que se cree un ticket de defecto al fallar un caso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-08-ver-la-matriz-de-trazabilidad-historia-caso-ultima-ejecucion-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-08 — Ver la matriz de trazabilidad historia → caso → última ejecución → defecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-09-ver-un-dashboard-con-la-tasa-de-aprobacion-defectos-por-severidad-y-mttr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-09 — Ver un dashboard con la tasa de aprobación, defectos por severidad y MTTR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-10-exportar-el-informe-de-una-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-10 — Exportar el informe de una corrida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-11-subir-el-junit-xml-de-mi-pipeline-a-vigia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-11 — Subir el JUnit XML de mi pipeline a Vigía
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-12-crear-un-github-issue-desde-un-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-12 — Crear un GitHub Issue desde un ticket
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hu-13-recibir-una-notificacion-en-discord-o-slack-cuando-una-corrida-falla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HU-13 — Recibir una notificación en Discord o Slack cuando una corrida falla
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tareas-tecnicas-calidad-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tareas técnicas (calidad del producto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-hecho-dod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definición de Hecho (DoD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="backlog-unidad-ii-historias-de-usuario-invest">Backlog Unidad II — historias de usuario (INVEST)<a class="headerlink" href="#backlog-unidad-ii-historias-de-usuario-invest" title="Permanent link">&para;</a></h1>
+<p>Rumbo: <strong>Opción 2 recortada</strong> (gestor de pruebas MANUAL + API + SQL, con historias, trazabilidad y corridas) + automatizaciones obligatorias + reto con 3 integraciones.</p>
+<p>Cada historia es <strong>I</strong>ndependiente (se entrega sola), <strong>N</strong>egociable, <strong>V</strong>aliosa para un rol, <strong>E</strong>stimable (puntos), <strong>S</strong>mall (cabe en una semana) y <strong>T</strong>esteable (criterios Dado/Cuando/Entonces que pasan a escenarios BDD).</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Épica</th>
+<th>Historia</th>
+<th>Pts</th>
+<th>Prioridad</th>
+<th>Semana</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HU-01</td>
+<td>E1 Historias</td>
+<td>Como líder de QA, quiero registrar una historia de usuario con su descripción y criterios de aceptación</td>
+<td>3</td>
+<td>Alta</td>
+<td>2</td>
+<td>Gerald (API) · Víctor (UI)</td>
+</tr>
+<tr>
+<td>HU-02</td>
+<td>E1 Historias</td>
+<td>Como tester, quiero vincular un caso de prueba existente a una historia</td>
+<td>2</td>
+<td>Alta</td>
+<td>2</td>
+<td>Gerald · Víctor</td>
+</tr>
+<tr>
+<td>HU-03</td>
+<td>E2 Casos</td>
+<td>Como tester, quiero crear un caso de prueba MANUAL con pasos, datos de entrada y resultado esperado</td>
+<td>3</td>
+<td>Alta</td>
+<td>2</td>
+<td>Gerald · Víctor</td>
+</tr>
+<tr>
+<td>HU-04</td>
+<td>E2 Casos</td>
+<td>Como tester, quiero crear un caso de prueba de API con método, URL, cuerpo y aserciones de código de estado y JSON</td>
+<td>5</td>
+<td>Alta</td>
+<td>2</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>HU-05</td>
+<td>E2 Casos</td>
+<td>Como tester, quiero seguir usando los casos SQL existentes como «validación de datos»</td>
+<td>1</td>
+<td>Media</td>
+<td>2</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>HU-06</td>
+<td>E3 Corridas</td>
+<td>Como tester, quiero iniciar una corrida de prueba sobre una suite</td>
+<td>5</td>
+<td>Alta</td>
+<td>3</td>
+<td>Gerald · Víctor</td>
+</tr>
+<tr>
+<td>HU-07</td>
+<td>E3 Corridas</td>
+<td>Como líder de QA, quiero que se cree un ticket de defecto al fallar un caso</td>
+<td>3</td>
+<td>Alta</td>
+<td>3</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>HU-08</td>
+<td>E4 Trazabilidad</td>
+<td>Como líder de QA, quiero ver la matriz de trazabilidad historia → caso → última ejecución → defecto</td>
+<td>3</td>
+<td>Alta</td>
+<td>3</td>
+<td>Víctor</td>
+</tr>
+<tr>
+<td>HU-09</td>
+<td>E4 Métricas</td>
+<td>Como líder del proyecto, quiero ver un dashboard con la tasa de aprobación, defectos por severidad y MTTR</td>
+<td>3</td>
+<td>Media</td>
+<td>4</td>
+<td>Víctor</td>
+</tr>
+<tr>
+<td>HU-10</td>
+<td>E4 Métricas</td>
+<td>Como líder de QA, quiero exportar el informe de una corrida</td>
+<td>3</td>
+<td>Media</td>
+<td>4</td>
+<td>Víctor</td>
+</tr>
+<tr>
+<td>HU-11</td>
+<td>E5 Integraciones</td>
+<td>Como desarrollador, quiero subir el JUnit XML de mi pipeline a Vigía</td>
+<td>3</td>
+<td>Media</td>
+<td>4</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>HU-12</td>
+<td>E5 Integraciones</td>
+<td>Como líder de QA, quiero crear un GitHub Issue desde un ticket</td>
+<td>3</td>
+<td>Media</td>
+<td>5</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>HU-13</td>
+<td>E5 Integraciones</td>
+<td>Como miembro del equipo, quiero recibir una notificación en Discord o Slack cuando una corrida falla</td>
+<td>2</td>
+<td>Baja</td>
+<td>5</td>
+<td>Gerald</td>
+</tr>
+</tbody>
+</table>
+<p>Total: 39 puntos.</p>
+<h2 id="detalle-y-criterios-de-aceptacion">Detalle y criterios de aceptación<a class="headerlink" href="#detalle-y-criterios-de-aceptacion" title="Permanent link">&para;</a></h2>
+<h3 id="hu-01-registrar-una-historia-de-usuario-con-su-descripcion-y-criterios-de-aceptacion">HU-01 — Registrar una historia de usuario con su descripción y criterios de aceptación<a class="headerlink" href="#hu-01-registrar-una-historia-de-usuario-con-su-descripcion-y-criterios-de-aceptacion" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder de QA, <strong>quiero</strong> registrar una historia de usuario con su descripción y criterios de aceptación, <strong>para</strong> tener requisitos verificables contra los cuales probar.</p>
+<p>Épica: E1 Historias · Puntos: 3 · Prioridad: Alta · Semana: 2 · Responsable: Gerald (API) · Víctor (UI)</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un proyecto activo en el que soy líder, <strong>cuando</strong> guardo una historia con título, «Como/Quiero/Para» y al menos un criterio, <strong>entonces</strong> la historia aparece en el backlog del proyecto con estado «Pendiente».</li>
+<li><strong>Dado</strong> el formulario de nueva historia, <strong>cuando</strong> intento guardarla sin criterios de aceptación, <strong>entonces</strong> el sistema no la guarda e indica que falta al menos un criterio.</li>
+</ol>
+<h3 id="hu-02-vincular-un-caso-de-prueba-existente-a-una-historia">HU-02 — Vincular un caso de prueba existente a una historia<a class="headerlink" href="#hu-02-vincular-un-caso-de-prueba-existente-a-una-historia" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> tester, <strong>quiero</strong> vincular un caso de prueba existente a una historia, <strong>para</strong> saber qué requisito verifica cada caso.</p>
+<p>Épica: E1 Historias · Puntos: 2 · Prioridad: Alta · Semana: 2 · Responsable: Gerald · Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> una historia y un caso del mismo proyecto, <strong>cuando</strong> vinculo el caso a la historia, <strong>entonces</strong> la historia muestra el caso en su lista de casos.</li>
+<li><strong>Dado</strong> un caso de otro proyecto, <strong>cuando</strong> intento vincularlo, <strong>entonces</strong> el sistema rechaza el vínculo con un mensaje claro.</li>
+</ol>
+<h3 id="hu-03-crear-un-caso-de-prueba-manual-con-pasos-datos-de-entrada-y-resultado-esperado">HU-03 — Crear un caso de prueba MANUAL con pasos, datos de entrada y resultado esperado<a class="headerlink" href="#hu-03-crear-un-caso-de-prueba-manual-con-pasos-datos-de-entrada-y-resultado-esperado" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> tester, <strong>quiero</strong> crear un caso de prueba MANUAL con pasos, datos de entrada y resultado esperado, <strong>para</strong> documentar pruebas que no se automatizan.</p>
+<p>Épica: E2 Casos · Puntos: 3 · Prioridad: Alta · Semana: 2 · Responsable: Gerald · Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> el formulario de caso con tipo MANUAL, <strong>cuando</strong> registro 3 pasos con su resultado esperado, <strong>entonces</strong> el caso se guarda con sus pasos en orden.</li>
+<li><strong>Dado</strong> un caso MANUAL sin pasos, <strong>cuando</strong> intento guardarlo, <strong>entonces</strong> el sistema exige al menos un paso.</li>
+</ol>
+<h3 id="hu-04-crear-un-caso-de-prueba-de-api-con-metodo-url-cuerpo-y-aserciones-de-codigo-de-estado-y-json">HU-04 — Crear un caso de prueba de API con método, URL, cuerpo y aserciones de código de estado y JSON<a class="headerlink" href="#hu-04-crear-un-caso-de-prueba-de-api-con-metodo-url-cuerpo-y-aserciones-de-codigo-de-estado-y-json" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> tester, <strong>quiero</strong> crear un caso de prueba de API con método, URL, cuerpo y aserciones de código de estado y JSON, <strong>para</strong> verificar servicios REST automáticamente.</p>
+<p>Épica: E2 Casos · Puntos: 5 · Prioridad: Alta · Semana: 2 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un caso API GET a una URL permitida con aserción «status = 200», <strong>cuando</strong> lo ejecuto y el servicio responde 200, <strong>entonces</strong> el resultado es APROBADO y se guarda la respuesta como evidencia.</li>
+<li><strong>Dado</strong> un caso API a una IP privada o a un dominio fuera de la lista blanca, <strong>cuando</strong> lo ejecuto, <strong>entonces</strong> el sistema lo bloquea (protección SSRF) y registra el motivo.</li>
+</ol>
+<h3 id="hu-05-seguir-usando-los-casos-sql-existentes-como-validacion-de-datos">HU-05 — Seguir usando los casos SQL existentes como «validación de datos»<a class="headerlink" href="#hu-05-seguir-usando-los-casos-sql-existentes-como-validacion-de-datos" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> tester, <strong>quiero</strong> seguir usando los casos SQL existentes como «validación de datos», <strong>para</strong> no perder lo ya construido.</p>
+<p>Épica: E2 Casos · Puntos: 1 · Prioridad: Media · Semana: 2 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un caso SQL creado en la Unidad I, <strong>cuando</strong> abro el módulo de casos, <strong>entonces</strong> aparece con tipo SQL y se ejecuta igual que antes, con ROLLBACK.</li>
+</ol>
+<h3 id="hu-06-iniciar-una-corrida-de-prueba-sobre-una-suite">HU-06 — Iniciar una corrida de prueba sobre una suite<a class="headerlink" href="#hu-06-iniciar-una-corrida-de-prueba-sobre-una-suite" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> tester, <strong>quiero</strong> iniciar una corrida de prueba sobre una suite, <strong>para</strong> ejecutar un ciclo completo y registrar sus resultados.</p>
+<p>Épica: E3 Corridas · Puntos: 5 · Prioridad: Alta · Semana: 3 · Responsable: Gerald · Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> una suite con casos MANUAL, API y SQL, <strong>cuando</strong> inicio una corrida, <strong>entonces</strong> los casos automáticos se ejecutan solos y los manuales quedan «Por ejecutar».</li>
+<li><strong>Dado</strong> una corrida en curso, <strong>cuando</strong> marco un caso manual como FALLIDO con comentario y captura, <strong>entonces</strong> el resultado y la evidencia quedan guardados con fecha y autor.</li>
+</ol>
+<h3 id="hu-07-que-se-cree-un-ticket-de-defecto-al-fallar-un-caso">HU-07 — Que se cree un ticket de defecto al fallar un caso<a class="headerlink" href="#hu-07-que-se-cree-un-ticket-de-defecto-al-fallar-un-caso" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder de QA, <strong>quiero</strong> que se cree un ticket de defecto al fallar un caso, <strong>para</strong> que ningún fallo se pierda.</p>
+<p>Épica: E3 Corridas · Puntos: 3 · Prioridad: Alta · Semana: 3 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> una corrida en curso, <strong>cuando</strong> un caso termina FALLIDO, <strong>entonces</strong> se crea un ticket enlazado al caso, a la corrida y a la historia, con la evidencia adjunta.</li>
+<li><strong>Dado</strong> un ticket abierto por un caso, <strong>cuando</strong> el caso pasa en una corrida posterior, <strong>entonces</strong> el ticket se marca «Listo para verificar».</li>
+</ol>
+<h3 id="hu-08-ver-la-matriz-de-trazabilidad-historia-caso-ultima-ejecucion-defecto">HU-08 — Ver la matriz de trazabilidad historia → caso → última ejecución → defecto<a class="headerlink" href="#hu-08-ver-la-matriz-de-trazabilidad-historia-caso-ultima-ejecucion-defecto" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder de QA, <strong>quiero</strong> ver la matriz de trazabilidad historia → caso → última ejecución → defecto, <strong>para</strong> saber qué requisitos están cubiertos y cuáles fallan.</p>
+<p>Épica: E4 Trazabilidad · Puntos: 3 · Prioridad: Alta · Semana: 3 · Responsable: Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un proyecto con historias, casos y corridas, <strong>cuando</strong> abro la matriz, <strong>entonces</strong> veo cada historia con sus casos, el último resultado y los defectos abiertos.</li>
+<li><strong>Dado</strong> una historia sin casos, <strong>cuando</strong> abro la matriz, <strong>entonces</strong> la historia aparece resaltada como «Sin cobertura».</li>
+</ol>
+<h3 id="hu-09-ver-un-dashboard-con-la-tasa-de-aprobacion-defectos-por-severidad-y-mttr">HU-09 — Ver un dashboard con la tasa de aprobación, defectos por severidad y MTTR<a class="headerlink" href="#hu-09-ver-un-dashboard-con-la-tasa-de-aprobacion-defectos-por-severidad-y-mttr" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder del proyecto, <strong>quiero</strong> ver un dashboard con la tasa de aprobación, defectos por severidad y MTTR, <strong>para</strong> decidir si una versión está lista para liberarse.</p>
+<p>Épica: E4 Métricas · Puntos: 3 · Prioridad: Media · Semana: 4 · Responsable: Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> al menos una corrida finalizada, <strong>cuando</strong> abro el dashboard, <strong>entonces</strong> veo la tasa de aprobación de la última corrida, los defectos por severidad y el MTTR en horas.</li>
+</ol>
+<h3 id="hu-10-exportar-el-informe-de-una-corrida">HU-10 — Exportar el informe de una corrida<a class="headerlink" href="#hu-10-exportar-el-informe-de-una-corrida" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder de QA, <strong>quiero</strong> exportar el informe de una corrida, <strong>para</strong> entregar evidencia al cliente o al docente.</p>
+<p>Épica: E4 Métricas · Puntos: 3 · Prioridad: Media · Semana: 4 · Responsable: Víctor</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> una corrida finalizada, <strong>cuando</strong> pulso «Exportar», <strong>entonces</strong> descargo un informe con el resumen, el resultado por caso y los defectos (formato de informe de pruebas ISO 29119-3).</li>
+</ol>
+<h3 id="hu-11-subir-el-junit-xml-de-mi-pipeline-a-vigia">HU-11 — Subir el JUnit XML de mi pipeline a Vigía<a class="headerlink" href="#hu-11-subir-el-junit-xml-de-mi-pipeline-a-vigia" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> desarrollador, <strong>quiero</strong> subir el JUnit XML de mi pipeline a Vigía, <strong>para</strong> ver las pruebas automatizadas de CI junto a las manuales.</p>
+<p>Épica: E5 Integraciones · Puntos: 3 · Prioridad: Media · Semana: 4 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un token de proyecto válido, <strong>cuando</strong> el pipeline envía un JUnit XML, <strong>entonces</strong> Vigía crea una corrida con un resultado por cada testcase.</li>
+<li><strong>Dado</strong> un XML mal formado, <strong>cuando</strong> se envía, <strong>entonces</strong> Vigía responde 422 y no crea la corrida.</li>
+</ol>
+<h3 id="hu-12-crear-un-github-issue-desde-un-ticket">HU-12 — Crear un GitHub Issue desde un ticket<a class="headerlink" href="#hu-12-crear-un-github-issue-desde-un-ticket" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> líder de QA, <strong>quiero</strong> crear un GitHub Issue desde un ticket, <strong>para</strong> que el desarrollador vea el defecto en su repositorio.</p>
+<p>Épica: E5 Integraciones · Puntos: 3 · Prioridad: Media · Semana: 5 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un ticket y un repositorio GitHub vinculado al proyecto, <strong>cuando</strong> pulso «Crear issue», <strong>entonces</strong> se crea el issue con el título, los pasos y el enlace al ticket, y el ticket guarda la URL del issue.</li>
+</ol>
+<h3 id="hu-13-recibir-una-notificacion-en-discord-o-slack-cuando-una-corrida-falla">HU-13 — Recibir una notificación en Discord o Slack cuando una corrida falla<a class="headerlink" href="#hu-13-recibir-una-notificacion-en-discord-o-slack-cuando-una-corrida-falla" title="Permanent link">&para;</a></h3>
+<p><strong>Como</strong> miembro del equipo, <strong>quiero</strong> recibir una notificación en Discord o Slack cuando una corrida falla, <strong>para</strong> enterarme sin entrar a la plataforma.</p>
+<p>Épica: E5 Integraciones · Puntos: 2 · Prioridad: Baja · Semana: 5 · Responsable: Gerald</p>
+<p>Criterios de aceptación:</p>
+<ol>
+<li><strong>Dado</strong> un webhook configurado en el proyecto, <strong>cuando</strong> una corrida termina con fallos, <strong>entonces</strong> llega un mensaje con el nombre de la suite, los fallos y el enlace a la corrida.</li>
+<li><strong>Dado</strong> el webhook responde con error, <strong>cuando</strong> se intenta notificar, <strong>entonces</strong> la corrida no se ve afectada y el error queda en el log.</li>
+</ol>
+<h2 id="tareas-tecnicas-calidad-del-producto">Tareas técnicas (calidad del producto)<a class="headerlink" href="#tareas-tecnicas-calidad-del-producto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Tarea</th>
+<th>Semana</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TT-01</td>
+<td>Análisis estático con SonarCloud, Semgrep y Snyk con reportes (static-analysis.yml)</td>
+<td>1</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-02</td>
+<td>Reorganizar tests/ por nivel (unit, integration, system) + cobertura ≥ 80 % y mutación ≥ 70 %</td>
+<td>2</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-03</td>
+<td>Infraestructura con Terraform, pruebas y costos con Infracost</td>
+<td>2</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-04</td>
+<td>Pruebas de integración (PostgreSQL y Oracle en CI) y de sistema (Docker Compose)</td>
+<td>3</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-05</td>
+<td>Release v<em>.</em>.* con despliegue y smoke test</td>
+<td>3</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-06</td>
+<td>E2E con Playwright en Chromium, Firefox y WebKit</td>
+<td>4</td>
+<td>Víctor</td>
+</tr>
+<tr>
+<td>TT-07</td>
+<td>README automático (diccionario de datos, ER, clases, componentes, despliegue) + GitHub Pages con MkDocs</td>
+<td>3</td>
+<td>Víctor · Gerald</td>
+</tr>
+<tr>
+<td>TT-08</td>
+<td>Aspectos no funcionales: sesiones, auditoría, caché, logs y telemetría (/metrics)</td>
+<td>5</td>
+<td>Gerald</td>
+</tr>
+<tr>
+<td>TT-09</td>
+<td>Pruebas de aceptación BDD (Gherkin en español) con reporte de documentación viva</td>
+<td>5</td>
+<td>Víctor</td>
+</tr>
+<tr>
+<td>TT-10</td>
+<td>Sesión UAT con compañeros + cuestionario SUS</td>
+<td>6</td>
+<td>Víctor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definicion-de-hecho-dod">Definición de Hecho (DoD)<a class="headerlink" href="#definicion-de-hecho-dod" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Criterios de aceptación cubiertos por escenarios BDD en verde.</li>
+<li>Pruebas unitarias y de integración nuevas; cobertura del módulo ≥ 80 %.</li>
+<li><code>static-analysis.yml</code> en verde (Quality Gate aprobado, sin hallazgos ERROR/high).</li>
+<li>Revisado en un PR por el otro integrante; el merge lo hace una persona.</li>
+<li>Documentación (README/Pages) y FD03 actualizados si cambia un requisito.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.indexes", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
